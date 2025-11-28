@@ -1,0 +1,176 @@
+QUIERO QUE GENERES UN SITIO WEB COMPLETO Y PROFESIONAL PARA MI AGENCIA **HIGH IMPACT STUDIO**, SIGUIENDO EXACTAMENTE ESTAS INSTRUCCIONES:
+
+====================================================================
+🎨 IDENTIDAD DE MARCA
+====================================================================
+Colores:
+- Negro
+- Blanco
+- Escala de grises del logo
+
+Estética:
+- Minimalista
+- Profesional
+- Tecnológica
+- Basada en software + IA
+
+Tipografía:
+- Moderna, limpia, de alto contraste.
+
+====================================================================
+🏗️ ESTRUCTURA DEL SITIO + COPYWRITING OFICIAL
+====================================================================
+
+======================================================
+1. 🔝 ENCABEZADO
+======================================================
+- Logo a la izquierda
+- Navegación: Inicio – Servicios – Sobre mí – Testimonios – Contacto
+- Botón CTA: **“Impacto”**
+- Estilo sticky, minimalista y con sombra suave.
+
+======================================================
+2. 🎯 HERO / PRESENTACIÓN
+======================================================
+Debe incluir foto del fundador (yo proveeré imagen luego).
+
+TEXTO:
+Título:
+**Impulsa tu negocio con software, IA y estrategias que generan impacto real**
+
+Subtítulo:
+Creamos soluciones digitales que automatizan, escalan y transforman tu operación: desarrollo de software, integraciones con IA y gestión estratégica de contenido.
+
+Botones:
+- **Crear Impacto**
+- **Agendar llamada**
+
+Background:
+- Minimalista, negro/blanco o con patrón abstracto tecnológico.
+
+======================================================
+3. 🛠️ SERVICIOS
+======================================================
+Tres bloques iguales, diseño minimalista con iconos monocromáticos.
+
+A) Desarrollo de Software  
+Texto:
+Creamos soluciones digitales diseñadas para convertir: landing pages de alto rendimiento, e-commerce optimizados, apps modernas y sistemas a medida para tu negocio.
+
+Bullets:
+- Landing pages enfocadas en conversión
+- E-commerce completos y escalables
+- Apps y sistemas personalizados
+- Integraciones a medida
+
+B) Automatizaciones con IA  
+Texto:
+Optimiza tu operación con automatizaciones inteligentes en n8n, Make y APIs personalizadas. Reduce tareas repetitivas, aumenta eficiencia y libera horas de trabajo.
+
+Bullets:
+- Automatizaciones con IA
+- Bots y flujos inteligentes
+- Integración entre plataformas
+- Reducción de carga operativa
+
+C) Content Management  
+Texto:
+Gestionamos tu marca digital con estrategias de contenido, manejo de redes y embudos de venta diseñados para atraer, convertir y fidelizar.
+
+Bullets:
+- Community management profesional
+- Estrategias para redes sociales
+- Embudos de venta digitales
+- Creación de contenido visual y escrito
+
+======================================================
+4. 🧑‍💻 SOBRE MÍ
+======================================================
+Debe incluir foto del fundador.
+
+Texto:
+Soy el fundador de High Impact Studio.  
+Me especializo en desarrollo de software, automatizaciones con IA y estrategias digitales que potencian negocios. Combino tecnología, creatividad y marketing para crear soluciones que realmente generan impacto y resultados medibles.
+
+======================================================
+5. ⭐ TESTIMONIOS
+======================================================
+Tres tarjetas minimalistas:
+
+1. “El sistema que desarrollaron nos ahorra más de 20 horas al mes. La automatización es una locura.”
+2. “El manejo de redes elevó nuestra marca y triplicó la interacción orgánica.”
+3. “Nos guiaron en todo el proceso y entregaron justo lo que necesitábamos, y más.”
+
+======================================================
+6. 📞 CONTACTO
+======================================================
+Botones:
+- Calendly → Agendar llamada
+- WhatsApp → Hablar ahora
+- Instagram → Ver más
+- Gmail → Enviar correo
+
+Texto final:
+**¿Listo para generar impacto? Conectemos.**
+
+======================================================
+7. 🔚 FOOTER
+======================================================
+- Logo pequeño
+- Navegación inferior
+- Derechos reservados
+- Diseño negro minimalista
+
+====================================================================
+🧩 TECNOLOGÍAS A USAR (OBLIGATORIO)
+====================================================================
+- React
+- Vite
+- TailwindCSS
+- React Router
+- SPA completa
+- Responsivo perfecto
+- Código limpio y modular
+
+====================================================================
+📁 ESTRUCTURA DE ARCHIVOS DEL PROYECTO
+====================================================================
+Debe generar:
+
+/src  
+  /components  
+  /sections  
+  /assets  
+  /styles  
+index.html  
+vite.config.js  
+tailwind.config.js  
+postcss.config.js  
+package.json  
+vercel.json  (OBLIGATORIO)
+
+====================================================================
+📌 ARCHIVO **OBLIGATORIO**: vercel.json
+====================================================================
+Inclúyelo SIEMPRE desde el inicio del proyecto en raíz:
+
+{
+  "framework": "vite",
+  "outputDirectory": "dist/public",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
+====================================================================
+🎯 OBJETIVO FINAL
+====================================================================
+Crear un sitio moderno, limpio, altamente profesional y con estética alineada a la marca High Impact Studio.  
+Debe ser completamente funcional, rápido, bien optimizado y listo para producción en Replit o Vercel.
+
+====================================================================
+FIN DEL MEGA-PROMPT
+====================================================================

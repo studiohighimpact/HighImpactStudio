@@ -1,0 +1,44 @@
+# Node
+node_modules/
+npm-debug.log*
+.yarn-integrity
+.pnp.*
+
+# Build
+dist/
+build/
+.client
+
+# Vite
+/.vite
+
+# Env
+.env
+.env.*
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Misc
+coverage/
+coverage-final.json
+nyc_output/
+.rollup.cache
+
+# ssh keys
+*.pem
+
+# generated images or attachments
+attached_assets/generated_images/
