@@ -1,4 +1,4 @@
-import { Code2, Cpu, BarChart3, Check } from 'lucide-react';
+import { Code2, Cpu, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
@@ -23,17 +23,6 @@ const services = [
       "Integración entre plataformas",
       "Reducción de carga operativa"
     ]
-  },
-  {
-    icon: BarChart3,
-    title: "Content Management",
-    description: "Gestionamos tu marca digital con estrategias de contenido, manejo de redes y embudos de venta diseñados para atraer, convertir y fidelizar.",
-    bullets: [
-      "Community management profesional",
-      "Estrategias para redes sociales",
-      "Embudos de venta digitales",
-      "Creación de contenido visual y escrito"
-    ]
   }
 ];
 
@@ -46,7 +35,7 @@ export default function Services() {
           <div className="h-1 w-20 bg-white" />
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
           {services.map((service, index) => (
             <motion.div
               key={index}

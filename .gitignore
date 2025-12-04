@@ -42,3 +42,5 @@ nyc_output/
 
 # generated images or attachments
 attached_assets/generated_images/
+.vercel
+.env*.local

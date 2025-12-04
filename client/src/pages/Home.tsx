@@ -2,6 +2,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import BackgroundAtoms from '@/components/layout/BackgroundAtoms';
 import Hero from '@/sections/Hero';
+import VideoPresentation from '@/sections/VideoPresentation';
 import InteractiveVisual from '@/sections/InteractiveVisual';
 import Services from '@/sections/Services';
 import About from '@/sections/About';
@@ -15,6 +16,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <VideoPresentation />
         <InteractiveVisual />
         <Services />
         <About />
