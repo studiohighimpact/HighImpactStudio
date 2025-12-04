@@ -44,7 +44,9 @@ export default function VideoPresentation() {
             <div style={{ paddingBottom: '56.25%' }} className="relative h-0">
               <iframe
                 ref={setVideoElement}
-                src="https://player.vimeo.com/video/1143529692?autoplay=0&controls=0&loop=false&muted=false"
+                src={isMobile 
+                  ? "https://player.vimeo.com/video/1143529692?autoplay=0&controls=1&loop=false&muted=false"
+                  : "https://player.vimeo.com/video/1143529692?autoplay=0&controls=0&loop=false&muted=false"}
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
