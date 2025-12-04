@@ -35,7 +35,7 @@ export default function Services() {
           <div className="h-1 w-20 bg-white" />
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-3xl">
+        <div className="grid md:grid-cols-2 gap-8">
           {services.map((service, index) => (
             <motion.div
               key={index}

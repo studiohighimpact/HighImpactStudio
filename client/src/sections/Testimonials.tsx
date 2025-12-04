@@ -7,7 +7,7 @@ const testimonials = [
     author: "CEO, TechStartup"
   },
   {
-    quote: "El manejo de redes elevó nuestra marca del gimnasio y triplicó la interacción orgánica.",
+    quote: "Gracias a Axel, nuestro gimnasio tiene una página web profesional, destacándonos de nuestra competencia y gracias a ellos sumamos nuevos alumnos.",
     author: "Dueño del gimnasio, ProFitness"
   },
   {
