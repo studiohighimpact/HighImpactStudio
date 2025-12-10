@@ -33,9 +33,22 @@ export default function Hero() {
             Impulsa tu negocio con <span className="text-gray-500">software, IA</span> y estrategias de <span className="underline decoration-white/30 underline-offset-8">impacto real</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-xl leading-relaxed">
-            Creamos soluciones digitales que automatizan, escalan y transforman tu operación: desarrollo de software, integraciones con IA y gestión estratégica de contenido.
-          </p>
+          <div className="space-y-6 mb-8 max-w-xl">
+            <div>
+              <h3 className="text-lg font-semibold text-white">Sitios web que convierten</h3>
+              <p className="text-gray-400">Creamos sitios webs modernos, profesionales y que conviertan una visita en un cliente asegurado.</p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white">Automatizaciones con IA</h3>
+              <p className="text-gray-400">Si queres ahorrar tiempo en procedimientos manuales en tu negocio, creamos tu agente de IA ideal para ahorrar tu tiempo y tu dinero.</p>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white">Transformamos ideas en código</h3>
+              <p className="text-gray-400">Tenes una idea de aplicación? Nosotros la transformamos en código para que se vuelva realidad.</p>
+            </div>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4">
             <CustomButton variant="primary" size="lg" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior: 'smooth'})}>
