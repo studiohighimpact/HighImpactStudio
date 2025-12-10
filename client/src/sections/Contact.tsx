@@ -26,7 +26,7 @@ export default function Contact() {
           </p>
 
           <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
-            <a href="https://calendly.com" target="_blank" rel="noreferrer" className="w-full">
+            <a href="https://calendly.com/studiohighimpact/30min" target="_blank" rel="noreferrer" className="w-full">
               <CustomButton variant="primary" className="w-full gap-3 h-16 text-lg">
                 <Calendar size={20} />
                 Agendar Llamada
