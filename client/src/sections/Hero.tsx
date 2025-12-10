@@ -27,26 +27,26 @@ export default function Hero() {
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-2xl"
+          className="max-w-3xl"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
-            Impulsamos tu negocio con una web que convierta un impacto real
+          <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 tracking-tight">
+            Impulsamos tu negocio con una web que convierta en <span className="underline decoration-white/30 underline-offset-8">impacto real</span>
           </h1>
-          
-          <div className="space-y-6 mb-8 max-w-xl">
+
+          <div className="grid gap-6 mb-6 md:grid-cols-3 md:items-start">
             <div>
-              <h3 className="text-lg font-semibold text-white">Sitios web que convierten</h3>
-              <p className="text-gray-400">Creamos sitios webs modernos, profesionales y que conviertan una visita en un cliente asegurado.</p>
+              <h4 className="text-base font-semibold text-white mb-1">Sitios web que convierten</h4>
+              <p className="text-sm text-gray-400 leading-snug">Creamos sitios webs modernos, profesionales y que conviertan una visita en un cliente asegurado.</p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white">Automatizaciones con IA</h3>
-              <p className="text-gray-400">Si queres ahorrar tiempo en procedimientos manuales en tu negocio, creamos tu agente de IA ideal para ahorrar tu tiempo y tu dinero.</p>
+              <h4 className="text-base font-semibold text-white mb-1">Automatizaciones con IA</h4>
+              <p className="text-sm text-gray-400 leading-snug">Si queres ahorrar tiempo en procedimientos manuales en tu negocio, creamos tu agente de IA ideal para ahorrar tu tiempo y tu dinero.</p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-white">Transformamos ideas en código</h3>
-              <p className="text-gray-400">Tenes una idea de aplicación? Nosotros la transformamos en código para que se vuelva realidad.</p>
+              <h4 className="text-base font-semibold text-white mb-1">Transformamos ideas en código</h4>
+              <p className="text-sm text-gray-400 leading-snug">Tenes una idea de aplicación? Nosotros la transformamos en código para que se vuelva realidad.</p>
             </div>
           </div>
           
