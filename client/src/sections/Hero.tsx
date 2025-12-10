@@ -30,7 +30,7 @@ export default function Hero() {
           className="max-w-2xl"
         >
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
-            Impulsa tu negocio con <span className="text-gray-500">software, IA</span> y estrategias de <span className="underline decoration-white/30 underline-offset-8">impacto real</span>
+            Impulsamos tu negocio con una web que convierta un impacto real
           </h1>
           
           <div className="space-y-6 mb-8 max-w-xl">
