@@ -33,7 +33,7 @@ export default function Contact() {
               </CustomButton>
             </a>
             
-            <a href="https://wa.link/obtvgx" target="_blank" rel="noreferrer" className="w-full">
+            <a href="https://wa.me/543513079334?text=Hola%2C%20me%20interesa%20trabajar%20con%20ustedes" target="_blank" rel="noreferrer" className="w-full">
               <CustomButton variant="outline" className="w-full gap-3 h-16 text-lg">
                 <MessageCircle size={20} />
                 Hablar por WhatsApp

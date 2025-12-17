@@ -7,21 +7,21 @@ const navigationItems = [
     title: "SERVICIOS",
     description: "Desarrollo web profesional, aplicaciones a medida y automatizaciones con IA para potenciar tu negocio.",
     icon: Code2,
-    href: "#services",
+    href: "/servicios",
     cta: "Ver servicios"
   },
   {
     title: "PROYECTOS",
     description: "Casos de éxito reales. Descubre cómo hemos transformado negocios digitalmente.",
     icon: FolderKanban,
-    href: "#testimonials",
+    href: "/proyectos",
     cta: "Ver proyectos"
   },
   {
     title: "CONTACTO",
     description: "¿Listo para llevar tu negocio al siguiente nivel? Agenda una llamada gratuita de 30 minutos.",
     icon: MessageCircle,
-    href: "#contact",
+    href: "/contacto",
     cta: "Agendar llamada"
   }
 ];

@@ -19,19 +19,16 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Inicio', href: '#hero' },
-    { name: 'Servicios', href: '#services' },
-    { name: 'Sobre mí', href: '#about' },
-    { name: 'Testimonios', href: '#testimonials' },
-    { name: 'Contacto', href: '#contact' },
+    { name: 'Inicio', href: '/' },
+    { name: 'Servicios', href: '/servicios' },
+    { name: 'Sobre mí', href: '/sobre-mi' },
+    { name: 'Proyectos', href: '/proyectos' },
+    { name: 'Contacto', href: '/contacto' },
   ];
 
-  const scrollToSection = (id: string) => {
+  const handleNavClick = (href: string) => {
     setMobileMenuOpen(false);
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    setLocation(href);
   };
 
   return (
@@ -43,10 +40,10 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollToSection('#hero')}>
-          <div className="w-8 h-8 bg-white rounded-none flex items-center justify-center overflow-hidden">
+        <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('/')}>
+          <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
             <img
-              src="https://res.cloudinary.com/dwspyodrs/image/upload/v1764304700/Disen%CC%83o_sin_ti%CC%81tulo_hrrkje.png"
+              src="https://res.cloudinary.com/dwspyodrs/image/upload/v1765985290/Logotipo_para_Agencia_de_Marketing_Digital_Minimalista_Negro_1_nvxbje.png"
               alt="High Impact Studio logo"
               className="w-full h-full object-contain"
             />
@@ -61,13 +58,13 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <button
               key={link.name}
-              onClick={() => scrollToSection(link.href)}
+              onClick={() => handleNavClick(link.href)}
               className="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide"
             >
               {link.name}
             </button>
           ))}
-          <CustomButton variant="primary" size="sm" onClick={() => scrollToSection('#contact')}>
+          <CustomButton variant="primary" size="sm" onClick={() => handleNavClick('/contacto')}>
             Impacto
           </CustomButton>
         </div>
@@ -93,14 +90,14 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <button
                 key={link.name}
-                onClick={() => scrollToSection(link.href)}
+                onClick={() => handleNavClick(link.href)}
                 className="text-left text-lg text-gray-300 hover:text-white py-2 border-b border-white/5"
               >
                 {link.name}
               </button>
             ))}
             <div className="pt-4">
-              <CustomButton variant="primary" className="w-full" onClick={() => scrollToSection('#contact')}>
+              <CustomButton variant="primary" className="w-full" onClick={() => handleNavClick('/contacto')}>
                 Impacto
               </CustomButton>
             </div>

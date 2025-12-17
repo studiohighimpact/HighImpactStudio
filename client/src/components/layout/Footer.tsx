@@ -8,9 +8,9 @@ export default function Footer() {
           {/* Logo + tagline */}
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <div className="w-6 h-6 bg-white flex items-center justify-center overflow-hidden">
+              <div className="w-6 h-6 flex items-center justify-center overflow-hidden">
                 <img
-                  src="https://res.cloudinary.com/dwspyodrs/image/upload/v1764304700/Disen%CC%83o_sin_ti%CC%81tulo_hrrkje.png"
+                  src="https://res.cloudinary.com/dwspyodrs/image/upload/v1765985290/Logotipo_para_Agencia_de_Marketing_Digital_Minimalista_Negro_1_nvxbje.png"
                   alt="High Impact Studio logo"
                   className="w-full h-full object-contain"
                 />
@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Social links */}
           <div className="flex items-center gap-4">
             <a
-              href="https://wa.me/5491173652060?text=Hola%2C%20me%20interesa%20trabajar%20con%20ustedes"
+              href="https://wa.me/543513079334?text=Hola%2C%20me%20interesa%20trabajar%20con%20ustedes"
               target="_blank"
               rel="noopener noreferrer"
               className="p-2 rounded-full border border-white/20 hover:border-white/40 hover:bg-white/5 transition-all text-white/60 hover:text-white"

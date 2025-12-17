@@ -1,7 +1,6 @@
 import { CustomButton } from '@/components/ui/custom-button';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import bgImage from '@assets/generated_images/abstract_tech_background.png';
 
 export default function Hero() {
   return (
@@ -11,13 +10,13 @@ export default function Hero() {
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/80 z-10" /> {/* Overlay */}
+        <div className="absolute inset-0 bg-black/70 z-10" /> {/* Overlay */}
         <img 
-          src={bgImage} 
+          src="https://res.cloudinary.com/dwspyodrs/image/upload/v1765984452/hq720_lxheye.jpg" 
           alt="Background" 
-          className="w-full h-full object-cover opacity-50 grayscale"
+          className="w-full h-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black z-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-20" />
       </div>
 
       <div className="container mx-auto px-6 relative z-30 flex items-center justify-center">
