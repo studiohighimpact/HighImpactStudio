@@ -1,8 +1,11 @@
 import { CustomButton } from '@/components/ui/custom-button';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'wouter';
 
 export default function Hero() {
+  const [, setLocation] = useLocation();
+  
   return (
     <section 
       id="hero" 
@@ -37,7 +40,7 @@ export default function Hero() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <CustomButton variant="primary" size="lg" onClick={() => document.getElementById('services')?.scrollIntoView({behavior: 'smooth'})}>
+            <CustomButton variant="primary" size="lg" onClick={() => setLocation('/servicios')}>
               Ver Servicios
             </CustomButton>
             <CustomButton

@@ -105,16 +105,17 @@ const serviciosGenerales = [
   },
   {
     name: "MENÚ DIGITAL",
-    price: "45.000",
-    description: "Carta digital profesional para restaurantes. Tus clientes pueden ver el menú desde su celular escaneando un código QR.",
+    price: "74.000",
+    description: "Carta digital profesional para restaurantes. Tus clientes pueden ver el menú desde su celular escaneando un código QR y hacen los pedidos en la misma carta, llegando los detalles del pedido a tu whatsapp.",
     features: [
       "Categorías de platos",
       "Fotos de alta calidad",
       "Precios y descripciones",
       "Código QR incluido",
-      "Fácil actualización"
+      "Fácil actualización",
+      "Pedidos por WhatsApp"
     ],
-    delivery: "Entrega en 3-4 días",
+    delivery: "Entrega en 2/3 días",
     badge: null
   },
   {
