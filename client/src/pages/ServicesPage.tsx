@@ -1,9 +1,32 @@
 import { motion } from 'framer-motion';
-import { Check, Zap, Clock } from 'lucide-react';
+import { Check, Zap, Clock, CreditCard, Building2, Bitcoin, Wallet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import BackgroundAtoms from '@/components/layout/BackgroundAtoms';
+
+const metodosPago = [
+  {
+    name: "Payoneer",
+    description: "Pagos internacionales seguros",
+    icon: Wallet
+  },
+  {
+    name: "Mercado Pago",
+    description: "Tarjetas, transferencia y cuotas",
+    icon: CreditCard
+  },
+  {
+    name: "Transferencia Bancaria",
+    description: "Depósito directo a cuenta",
+    icon: Building2
+  },
+  {
+    name: "USDT (Cripto)",
+    description: "Stablecoin en red TRC20/ERC20",
+    icon: Bitcoin
+  }
+];
 
 const ofertasFinDeAnio = [
   {
@@ -422,6 +445,41 @@ export default function ServicesPage() {
                   >
                     <a href="/contacto">Contratar</a>
                   </Button>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+
+          {/* Métodos de Pago */}
+          <section className="mt-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+                Métodos de Pago
+              </h2>
+              <p className="text-white/60">
+                Aceptamos múltiples formas de pago para tu comodidad
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+              {metodosPago.map((metodo, index) => (
+                <motion.div
+                  key={metodo.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  className="bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10 p-6 rounded-lg hover:border-white/30 transition-all duration-300 text-center"
+                >
+                  <metodo.icon className="w-8 h-8 text-white mx-auto mb-3" />
+                  <h3 className="text-white font-semibold mb-1">{metodo.name}</h3>
+                  <p className="text-white/50 text-xs">{metodo.description}</p>
                 </motion.div>
               ))}
             </div>
