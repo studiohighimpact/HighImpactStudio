@@ -7,9 +7,14 @@ import BackgroundAtoms from '@/components/layout/BackgroundAtoms';
 
 const metodosPago = [
   {
+    name: "Western Union",
+    description: "Envíos internacionales rápidos",
+    icon: Wallet
+  },
+  {
     name: "Payoneer",
     description: "Pagos internacionales seguros",
-    icon: Wallet
+    icon: CreditCard
   },
   {
     name: "Mercado Pago",
