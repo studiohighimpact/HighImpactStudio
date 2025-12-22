@@ -1,73 +1,138 @@
 import { motion } from 'framer-motion';
 import { Code, Database, Smartphone, Search, Palette, Server, Award, MessageSquare, Clock, Heart, Lightbulb, CheckCircle } from 'lucide-react';
-
-const skills = [
-  {
-    icon: Code,
-    title: "DESARROLLO FRONTEND",
-    description: "HTML5, CSS3, JavaScript moderno. Código limpio, semántico y optimizado para rendimiento."
-  },
-  {
-    icon: Server,
-    title: "DESARROLLO BACKEND",
-    description: "Experiencia en desarrollo backend y arquitectura de aplicaciones del lado del servidor."
-  },
-  {
-    icon: Database,
-    title: "BASES DE DATOS",
-    description: "Diseño y gestión de bases de datos relacionales y optimización de consultas."
-  },
-  {
-    icon: Smartphone,
-    title: "RESPONSIVE DESIGN",
-    description: "Diseños que se adaptan perfectamente a cualquier dispositivo: móvil, tablet y desktop."
-  },
-  {
-    icon: Search,
-    title: "SEO OPTIMIZACIÓN",
-    description: "Sitios optimizados para motores de búsqueda con buenas prácticas de SEO técnico."
-  },
-  {
-    icon: Palette,
-    title: "UI/UX DESIGN",
-    description: "Interfaces intuitivas y atractivas centradas en la experiencia del usuario."
-  }
-];
-
-const values = [
-  {
-    icon: Award,
-    title: "CALIDAD",
-    description: "Cada proyecto recibe la misma atención al detalle, sin importar su tamaño. Código limpio y diseño profesional siempre."
-  },
-  {
-    icon: MessageSquare,
-    title: "COMUNICACIÓN",
-    description: "Respuestas rápidas y claras. Todo el proceso por WhatsApp para que sea simple y directo."
-  },
-  {
-    icon: Clock,
-    title: "PUNTUALIDAD",
-    description: "Respeto los tiempos acordados. Si digo una fecha de entrega, la cumplo."
-  },
-  {
-    icon: Heart,
-    title: "COMPROMISO",
-    description: "Tu proyecto es importante para mí. Me involucro para que logres tus objetivos."
-  },
-  {
-    icon: Lightbulb,
-    title: "INNOVACIÓN",
-    description: "Siempre busco las mejores soluciones y me mantengo actualizado con las últimas tecnologías."
-  },
-  {
-    icon: CheckCircle,
-    title: "HONESTIDAD",
-    description: "Te digo lo que realmente necesitas, sin venderte cosas innecesarias."
-  }
-];
+import { useLanguage } from '@/lib/i18n';
 
 export default function About() {
+  const { language, t } = useLanguage();
+  
+  const skills = language === 'es' ? [
+    {
+      icon: Code,
+      title: "DESARROLLO FRONTEND",
+      description: "HTML5, CSS3, JavaScript moderno. Código limpio, semántico y optimizado para rendimiento."
+    },
+    {
+      icon: Server,
+      title: "DESARROLLO BACKEND",
+      description: "Experiencia en desarrollo backend y arquitectura de aplicaciones del lado del servidor."
+    },
+    {
+      icon: Database,
+      title: "BASES DE DATOS",
+      description: "Diseño y gestión de bases de datos relacionales y optimización de consultas."
+    },
+    {
+      icon: Smartphone,
+      title: "RESPONSIVE DESIGN",
+      description: "Diseños que se adaptan perfectamente a cualquier dispositivo: móvil, tablet y desktop."
+    },
+    {
+      icon: Search,
+      title: "SEO OPTIMIZACIÓN",
+      description: "Sitios optimizados para motores de búsqueda con buenas prácticas de SEO técnico."
+    },
+    {
+      icon: Palette,
+      title: "UI/UX DESIGN",
+      description: "Interfaces intuitivas y atractivas centradas en la experiencia del usuario."
+    }
+  ] : [
+    {
+      icon: Code,
+      title: "FRONTEND DEVELOPMENT",
+      description: "HTML5, CSS3, modern JavaScript. Clean, semantic code optimized for performance."
+    },
+    {
+      icon: Server,
+      title: "BACKEND DEVELOPMENT",
+      description: "Experience in backend development and server-side application architecture."
+    },
+    {
+      icon: Database,
+      title: "DATABASES",
+      description: "Design and management of relational databases and query optimization."
+    },
+    {
+      icon: Smartphone,
+      title: "RESPONSIVE DESIGN",
+      description: "Designs that adapt perfectly to any device: mobile, tablet and desktop."
+    },
+    {
+      icon: Search,
+      title: "SEO OPTIMIZATION",
+      description: "Sites optimized for search engines with technical SEO best practices."
+    },
+    {
+      icon: Palette,
+      title: "UI/UX DESIGN",
+      description: "Intuitive and attractive interfaces centered on user experience."
+    }
+  ];
+
+  const values = language === 'es' ? [
+    {
+      icon: Award,
+      title: "CALIDAD",
+      description: "Cada proyecto recibe la misma atención al detalle, sin importar su tamaño. Código limpio y diseño profesional siempre."
+    },
+    {
+      icon: MessageSquare,
+      title: "COMUNICACIÓN",
+      description: "Respuestas rápidas y claras. Todo el proceso por WhatsApp para que sea simple y directo."
+    },
+    {
+      icon: Clock,
+      title: "PUNTUALIDAD",
+      description: "Respeto los tiempos acordados. Si digo una fecha de entrega, la cumplo."
+    },
+    {
+      icon: Heart,
+      title: "COMPROMISO",
+      description: "Tu proyecto es importante para mí. Me involucro para que logres tus objetivos."
+    },
+    {
+      icon: Lightbulb,
+      title: "INNOVACIÓN",
+      description: "Siempre busco las mejores soluciones y me mantengo actualizado con las últimas tecnologías."
+    },
+    {
+      icon: CheckCircle,
+      title: "HONESTIDAD",
+      description: "Te digo lo que realmente necesitas, sin venderte cosas innecesarias."
+    }
+  ] : [
+    {
+      icon: Award,
+      title: "QUALITY",
+      description: "Every project receives the same attention to detail, regardless of size. Clean code and professional design always."
+    },
+    {
+      icon: MessageSquare,
+      title: "COMMUNICATION",
+      description: "Quick and clear responses. The whole process via WhatsApp to keep it simple and direct."
+    },
+    {
+      icon: Clock,
+      title: "PUNCTUALITY",
+      description: "I respect agreed timelines. If I say a delivery date, I meet it."
+    },
+    {
+      icon: Heart,
+      title: "COMMITMENT",
+      description: "Your project is important to me. I get involved so you achieve your goals."
+    },
+    {
+      icon: Lightbulb,
+      title: "INNOVATION",
+      description: "I always seek the best solutions and stay updated with the latest technologies."
+    },
+    {
+      icon: CheckCircle,
+      title: "HONESTY",
+      description: "I tell you what you really need, without selling you unnecessary things."
+    }
+  ];
+
   return (
     <section id="about" className="py-24 bg-black relative overflow-hidden">
       {/* Subtle background pattern */}
@@ -106,35 +171,57 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="order-1 md:order-2"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Sobre mí</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+              {language === 'es' ? 'Sobre mí' : 'About me'}
+            </h2>
             
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
               <p>
-                <span className="text-white font-semibold">Mi nombre es Axel Rodríguez, fundador de High Impact Studio, y soy de Córdoba, Argentina.</span>
+                <span className="text-white font-semibold">
+                  {language === 'es' 
+                    ? 'Mi nombre es Axel Rodríguez, fundador de High Impact Studio, y soy de Córdoba, Argentina.'
+                    : "My name is Axel Rodriguez, founder of High Impact Studio, and I'm from Córdoba, Argentina."
+                  }
+                </span>
               </p>
               <p>
-                Tengo certificaciones como Professional Software Developer por Digital House y actualmente estudio la Tecnicatura en Desarrollo de Software en el ISPC.
+                {language === 'es'
+                  ? 'Tengo certificaciones como Professional Software Developer por Digital House y actualmente estudio la Tecnicatura en Desarrollo de Software en el ISPC.'
+                  : 'I have certifications as a Professional Software Developer from Digital House and I am currently studying Software Development at ISPC.'
+                }
               </p>
               <p>
-                Me especializo en desarrollo de software, automatizaciones con IA y estrategias digitales que potencian negocios. Combino tecnología, creatividad y marketing para diseñar soluciones que generan impacto real y resultados medibles.
+                {language === 'es'
+                  ? 'Me especializo en desarrollo de software, automatizaciones con IA y estrategias digitales que potencian negocios. Combino tecnología, creatividad y marketing para diseñar soluciones que generan impacto real y resultados medibles.'
+                  : 'I specialize in software development, AI automation and digital strategies that boost businesses. I combine technology, creativity and marketing to design solutions that generate real impact and measurable results.'
+                }
               </p>
               <p>
-                Mi enfoque no es solo entregar código, sino construir sistemas que se conviertan en activos reales para tu empresa.
+                {language === 'es'
+                  ? 'Mi enfoque no es solo entregar código, sino construir sistemas que se conviertan en activos reales para tu empresa.'
+                  : 'My focus is not just delivering code, but building systems that become real assets for your company.'
+                }
               </p>
             </div>
 
             <div className="mt-10 flex gap-8">
               <div>
                 <span className="block text-3xl font-bold text-white mb-1">2+</span>
-                <span className="text-sm text-gray-500 uppercase tracking-wider">Años Exp.</span>
+                <span className="text-sm text-gray-500 uppercase tracking-wider">
+                  {language === 'es' ? 'Años Exp.' : 'Years Exp.'}
+                </span>
               </div>
               <div>
                 <span className="block text-3xl font-bold text-white mb-1">10+</span>
-                <span className="text-sm text-gray-500 uppercase tracking-wider">Proyectos</span>
+                <span className="text-sm text-gray-500 uppercase tracking-wider">
+                  {language === 'es' ? 'Proyectos' : 'Projects'}
+                </span>
               </div>
               <div>
                 <span className="block text-3xl font-bold text-white mb-1">100%</span>
-                <span className="text-sm text-gray-500 uppercase tracking-wider">Compromiso</span>
+                <span className="text-sm text-gray-500 uppercase tracking-wider">
+                  {language === 'es' ? 'Compromiso' : 'Commitment'}
+                </span>
               </div>
             </div>
           </motion.div>
@@ -151,10 +238,13 @@ export default function About() {
             className="text-center mb-12"
           >
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              Mis Habilidades
+              {language === 'es' ? 'Mis Habilidades' : 'My Skills'}
             </h3>
             <p className="text-white/60 max-w-2xl mx-auto">
-              Tecnologías y herramientas que domino para crear soluciones web profesionales
+              {language === 'es' 
+                ? 'Tecnologías y herramientas que domino para crear soluciones web profesionales'
+                : 'Technologies and tools I master to create professional web solutions'
+              }
             </p>
           </motion.div>
 
@@ -193,10 +283,13 @@ export default function About() {
             className="text-center mb-12"
           >
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              Mis Valores
+              {language === 'es' ? 'Mis Valores' : 'My Values'}
             </h3>
             <p className="text-white/60 max-w-2xl mx-auto">
-              Principios que guían mi trabajo y mi relación con los clientes
+              {language === 'es'
+                ? 'Principios que guían mi trabajo y mi relación con los clientes'
+                : 'Principles that guide my work and my relationship with clients'
+              }
             </p>
           </motion.div>
 

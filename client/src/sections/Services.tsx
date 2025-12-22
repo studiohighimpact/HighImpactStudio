@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 const pricingPlans = [
   {
     name: "Landing Page",
-    price: "150.000",
+    price: "400 USD",
     description: "Ideal para lanzar tu producto o servicio rápidamente con un sitio enfocado en conversión.",
     features: [
       "Diseño profesional a medida",
@@ -21,7 +21,7 @@ const pricingPlans = [
   },
   {
     name: "Web Profesional",
-    price: "250.000",
+    price: "800 USD",
     description: "Para empresas que necesitan presencia digital completa con múltiples secciones y funcionalidades.",
     features: [
       "Todo de Landing Page +",
@@ -38,7 +38,7 @@ const pricingPlans = [
   },
   {
     name: "E-commerce",
-    price: "590.000",
+    price: "1000 USD",
     description: "Tienda online completa para vender tus productos con sistema de pagos y gestión de inventario.",
     features: [
       "Todo de Web Profesional +",
@@ -49,7 +49,7 @@ const pricingPlans = [
       "Sistema de envíos",
       "6 meses de soporte premium"
     ],
-    delivery: "Entrega en 25-30 días",
+    delivery: "Entrega en 15-20 días",
     badge: null,
     popular: false
   }

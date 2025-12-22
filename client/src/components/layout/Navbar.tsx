@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { CustomButton } from '@/components/ui/custom-button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { useLanguage } from '@/lib/i18n';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [location, setLocation] = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,11 +21,11 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: 'Inicio', href: '/' },
-    { name: 'Servicios', href: '/servicios' },
-    { name: 'Sobre mí', href: '/sobre-mi' },
-    { name: 'Proyectos', href: '/proyectos' },
-    { name: 'Contacto', href: '/contacto' },
+    { name: t.nav.home, href: '/' },
+    { name: t.nav.services, href: '/servicios' },
+    { name: t.nav.about, href: '/sobre-mi' },
+    { name: t.nav.projects, href: '/proyectos' },
+    { name: t.nav.contact, href: '/contacto' },
   ];
 
   const handleNavClick = (href: string) => {
@@ -64,8 +66,19 @@ export default function Navbar() {
               {link.name}
             </button>
           ))}
+          
+          {/* Language Selector */}
+          <button
+            onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+            className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-white transition-colors"
+            title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+          >
+            <Globe className="w-4 h-4" />
+            <span className="uppercase font-medium">{language}</span>
+          </button>
+          
           <CustomButton variant="primary" size="sm" onClick={() => handleNavClick('/contacto')}>
-            Impacto
+            {t.nav.cta}
           </CustomButton>
         </div>
 
@@ -96,9 +109,19 @@ export default function Navbar() {
                 {link.name}
               </button>
             ))}
+            
+            {/* Mobile Language Selector */}
+            <button
+              onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+              className="flex items-center gap-2 text-lg text-gray-300 hover:text-white py-2 border-b border-white/5"
+            >
+              <Globe className="w-5 h-5" />
+              <span>{language === 'es' ? 'English' : 'Español'}</span>
+            </button>
+            
             <div className="pt-4">
               <CustomButton variant="primary" className="w-full" onClick={() => handleNavClick('/contacto')}>
-                Impacto
+                {t.nav.cta}
               </CustomButton>
             </div>
           </motion.div>

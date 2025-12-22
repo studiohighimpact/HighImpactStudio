@@ -4,12 +4,13 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import BackgroundAtoms from '@/components/layout/BackgroundAtoms';
+import { useLanguage } from '@/lib/i18n';
 
 const ofertasFinDeAnio = [
   {
     name: "LANDING PAGE",
-    originalPrice: "180.000",
-    price: "150.000",
+    originalPrice: "400 USD",
+    price: "350 USD",
     description: "Página única diseñada para captar clientes. Ideal para cualquier negocio que necesite presencia web rápida y efectiva.",
     features: [
       "Diseño 100% personalizado",
@@ -31,8 +32,8 @@ const ofertasFinDeAnio = [
   },
   {
     name: "WEB INSTITUCIONAL",
-    originalPrice: "280.000",
-    price: "250.000",
+    originalPrice: "800 USD",
+    price: "750 USD",
     description: "Presencia web completa con múltiples secciones. Perfecta para cualquier empresa o negocio que busca proyectar seriedad y profesionalismo.",
     features: [
       "Hasta 6 páginas completas",
@@ -59,7 +60,7 @@ const ofertasFinDeAnio = [
 const serviciosGenerales = [
   {
     name: "WEB INMOBILIARIA PRO",
-    price: "390.000",
+    price: "700 USD",
     description: "Sitio orientado a captación y conversión.",
     features: [
       "4 secciones (Home + Propiedades + Nosotros + Contacto)",
@@ -75,7 +76,7 @@ const serviciosGenerales = [
   },
   {
     name: "WEB ESTUDIO JURÍDICO",
-    price: "300.000",
+    price: "500 USD",
     description: "Estructura orientada a captación de clientes.",
     features: [
       "5 secciones",
@@ -90,7 +91,7 @@ const serviciosGenerales = [
   },
   {
     name: "WEB CONCESIONARIA PRO",
-    price: "390.000",
+    price: "700 USD",
     description: "Branding + captación de leads.",
     features: [
       "Home + Vehículos + Nosotros + Contacto",
@@ -105,7 +106,7 @@ const serviciosGenerales = [
   },
   {
     name: "MENÚ DIGITAL",
-    price: "74.000",
+    price: "150 USD",
     description: "Carta digital profesional para restaurantes. Tus clientes pueden ver el menú desde su celular escaneando un código QR y hacen los pedidos en la misma carta, llegando los detalles del pedido a tu whatsapp.",
     features: [
       "Categorías de platos",
@@ -120,7 +121,7 @@ const serviciosGenerales = [
   },
   {
     name: "PORTFOLIO PROFESIONAL",
-    price: "180.000",
+    price: "400 USD",
     description: "Sitio web para mostrar tu trabajo y proyectos. Ideal para fotógrafos, diseñadores, arquitectos y creativos.",
     features: [
       "Galería de trabajos",
@@ -134,7 +135,7 @@ const serviciosGenerales = [
   },
   {
     name: "E-COMMERCE",
-    price: "530.000",
+    price: "1000 USD",
     description: "Tienda online completa para vender productos 24/7. Con carrito de compras, gestión de productos y medios de pago integrados.",
     features: [
       "Productos ilimitados",
@@ -153,7 +154,7 @@ const serviciosGenerales = [
 const planesMantenimiento = [
   {
     name: "PLAN BÁSICO",
-    price: "25.000",
+    price: "70 USD",
     description: "Para Landing Pages y sitios pequeños",
     features: [
       "Modificaciones menores (textos, imágenes)",
@@ -164,7 +165,7 @@ const planesMantenimiento = [
   },
   {
     name: "PLAN PROFESIONAL",
-    price: "45.000",
+    price: "100 USD",
     description: "Para Sitios Institucionales completos",
     features: [
       "Modificaciones mayores (contenido, cambios de diseño simples)",
@@ -177,7 +178,7 @@ const planesMantenimiento = [
   },
   {
     name: "PLAN PREMIUM",
-    price: "65.000",
+    price: "150 USD",
     description: "Para E-commerce y sitios grandes",
     features: [
       "Asesoramiento continuo",
@@ -190,6 +191,8 @@ const planesMantenimiento = [
 ];
 
 export default function ServicesPage() {
+  const { language } = useLanguage();
+  
   return (
     <div className="relative min-h-screen bg-black text-white">
       <BackgroundAtoms />
@@ -216,10 +219,13 @@ export default function ServicesPage() {
               className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                Servicios
+                {language === 'es' ? 'Servicios' : 'Services'}
               </h1>
               <p className="text-white/60 text-lg max-w-2xl mx-auto">
-                Soluciones web profesionales adaptadas a tus necesidades
+                {language === 'es' 
+                  ? 'Soluciones web profesionales adaptadas a tus necesidades'
+                  : 'Professional web solutions tailored to your needs'
+                }
               </p>
             </motion.div>
           </div>
@@ -237,10 +243,13 @@ export default function ServicesPage() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Ofertas de Fin de Año
+                {language === 'es' ? 'Ofertas de Fin de Año' : 'End of Year Offers'}
               </h2>
               <p className="text-white/60">
-                Precios especiales en Landing Pages y Webs Institucionales hasta el 31 de diciembre
+                {language === 'es'
+                  ? 'Precios especiales en Landing Pages y Webs Institucionales hasta el 31 de diciembre'
+                  : 'Special prices on Landing Pages and Business Websites until December 31'
+                }
               </p>
             </motion.div>
 
@@ -299,7 +308,7 @@ export default function ServicesPage() {
                     asChild
                   >
                     <a href="/contacto">
-                      Solicitar <Zap className="w-4 h-4 ml-2" />
+                      {language === 'es' ? 'Solicitar' : 'Request'} <Zap className="w-4 h-4 ml-2" />
                     </a>
                   </Button>
                 </motion.div>
@@ -317,10 +326,13 @@ export default function ServicesPage() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Servicios Generales
+                {language === 'es' ? 'Servicios Generales' : 'General Services'}
               </h2>
               <p className="text-white/60">
-                Para todo tipo de negocios y emprendimientos
+                {language === 'es'
+                  ? 'Para todo tipo de negocios y emprendimientos'
+                  : 'For all types of businesses and ventures'
+                }
               </p>
             </motion.div>
 
@@ -363,7 +375,7 @@ export default function ServicesPage() {
                     className="w-full border-white/20 hover:border-white/40 hover:bg-white/5 text-white"
                     asChild
                   >
-                    <a href="/contacto">Consultar</a>
+                    <a href="/contacto">{language === 'es' ? 'Consultar' : 'Inquire'}</a>
                   </Button>
                 </motion.div>
               ))}
@@ -380,10 +392,13 @@ export default function ServicesPage() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Planes de Mantenimiento
+                {language === 'es' ? 'Planes de Mantenimiento' : 'Maintenance Plans'}
               </h2>
               <p className="text-white/60">
-                Todos los sitios incluyen 1 mes de mantenimiento GRATIS. Después podés contratar un plan opcional.
+                {language === 'es'
+                  ? 'Todos los sitios incluyen 1 mes de mantenimiento GRATIS. Después podés contratar un plan opcional.'
+                  : 'All sites include 1 month of FREE maintenance. After that, you can hire an optional plan.'
+                }
               </p>
             </motion.div>
 
@@ -420,7 +435,7 @@ export default function ServicesPage() {
                     className="w-full border-white/20 hover:border-white/40 hover:bg-white/5 text-white"
                     asChild
                   >
-                    <a href="/contacto">Contratar</a>
+                    <a href="/contacto">{language === 'es' ? 'Contratar' : 'Hire'}</a>
                   </Button>
                 </motion.div>
               ))}
