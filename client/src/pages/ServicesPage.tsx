@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import BackgroundAtoms from '@/components/layout/BackgroundAtoms';
-import { useLanguage } from '@/lib/i18n';
 
 const ofertasFinDeAnio = [
   {
@@ -191,8 +190,6 @@ const planesMantenimiento = [
 ];
 
 export default function ServicesPage() {
-  const { language } = useLanguage();
-  
   return (
     <div className="relative min-h-screen bg-black text-white">
       <BackgroundAtoms />
@@ -219,13 +216,10 @@ export default function ServicesPage() {
               className="text-center"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-                {language === 'es' ? 'Servicios' : 'Services'}
+                Servicios
               </h1>
               <p className="text-white/60 text-lg max-w-2xl mx-auto">
-                {language === 'es' 
-                  ? 'Soluciones web profesionales adaptadas a tus necesidades'
-                  : 'Professional web solutions tailored to your needs'
-                }
+                Soluciones web profesionales adaptadas a tus necesidades
               </p>
             </motion.div>
           </div>
@@ -243,13 +237,10 @@ export default function ServicesPage() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                {language === 'es' ? 'Ofertas de Fin de Año' : 'End of Year Offers'}
+                Ofertas de Fin de Año
               </h2>
               <p className="text-white/60">
-                {language === 'es'
-                  ? 'Precios especiales en Landing Pages y Webs Institucionales hasta el 31 de diciembre'
-                  : 'Special prices on Landing Pages and Business Websites until December 31'
-                }
+                Precios especiales en Landing Pages y Webs Institucionales hasta el 31 de diciembre
               </p>
             </motion.div>
 
@@ -308,7 +299,7 @@ export default function ServicesPage() {
                     asChild
                   >
                     <a href="/contacto">
-                      {language === 'es' ? 'Solicitar' : 'Request'} <Zap className="w-4 h-4 ml-2" />
+                      Solicitar <Zap className="w-4 h-4 ml-2" />
                     </a>
                   </Button>
                 </motion.div>
@@ -326,13 +317,10 @@ export default function ServicesPage() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                {language === 'es' ? 'Servicios Generales' : 'General Services'}
+                Servicios Generales
               </h2>
               <p className="text-white/60">
-                {language === 'es'
-                  ? 'Para todo tipo de negocios y emprendimientos'
-                  : 'For all types of businesses and ventures'
-                }
+                Para todo tipo de negocios y emprendimientos
               </p>
             </motion.div>
 
@@ -375,7 +363,7 @@ export default function ServicesPage() {
                     className="w-full border-white/20 hover:border-white/40 hover:bg-white/5 text-white"
                     asChild
                   >
-                    <a href="/contacto">{language === 'es' ? 'Consultar' : 'Inquire'}</a>
+                    <a href="/contacto">Consultar</a>
                   </Button>
                 </motion.div>
               ))}
@@ -392,13 +380,10 @@ export default function ServicesPage() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                {language === 'es' ? 'Planes de Mantenimiento' : 'Maintenance Plans'}
+                Planes de Mantenimiento
               </h2>
               <p className="text-white/60">
-                {language === 'es'
-                  ? 'Todos los sitios incluyen 1 mes de mantenimiento GRATIS. Después podés contratar un plan opcional.'
-                  : 'All sites include 1 month of FREE maintenance. After that, you can hire an optional plan.'
-                }
+                Todos los sitios incluyen 1 mes de mantenimiento GRATIS. Después podés contratar un plan opcional.
               </p>
             </motion.div>
 
@@ -435,7 +420,7 @@ export default function ServicesPage() {
                     className="w-full border-white/20 hover:border-white/40 hover:bg-white/5 text-white"
                     asChild
                   >
-                    <a href="/contacto">{language === 'es' ? 'Contratar' : 'Hire'}</a>
+                    <a href="/contacto">Contratar</a>
                   </Button>
                 </motion.div>
               ))}

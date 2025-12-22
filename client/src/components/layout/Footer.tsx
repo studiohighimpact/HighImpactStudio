@@ -1,9 +1,6 @@
 import { Mail, Instagram, MessageCircle } from 'lucide-react';
-import { useLanguage } from '@/lib/i18n';
 
 export default function Footer() {
-  const { language } = useLanguage();
-  
   return (
     <footer className="bg-black border-t border-white/10 py-12">
       <div className="container mx-auto px-4">
@@ -22,9 +19,7 @@ export default function Footer() {
                 HIGH IMPACT STUDIO
               </span>
             </div>
-            <p className="text-white/50 text-sm">
-              {language === 'es' ? 'Desarrollo Web Profesional' : 'Professional Web Development'}
-            </p>
+            <p className="text-white/50 text-sm">Desarrollo Web Profesional</p>
           </div>
 
           {/* Social links */}
@@ -58,7 +53,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="text-xs text-white/40 text-center">
-            © {new Date().getFullYear()} High Impact Studio. {language === 'es' ? 'Todos los derechos reservados.' : 'All rights reserved.'}
+            © {new Date().getFullYear()} High Impact Studio. Todos los derechos reservados.
           </div>
         </div>
       </div>

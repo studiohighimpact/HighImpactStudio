@@ -2,11 +2,9 @@ import { CustomButton } from '@/components/ui/custom-button';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'wouter';
-import { useLanguage } from '@/lib/i18n';
 
 export default function Hero() {
   const [, setLocation] = useLocation();
-  const { t } = useLanguage();
   
   return (
     <section 
@@ -34,23 +32,23 @@ export default function Hero() {
           className="max-w-4xl mx-auto text-center"
         >
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6 tracking-tight">
-            {t.hero.title} <span className="text-purple-400">{t.hero.highlight}</span>
+            Sitios Web que transforman tu negocio
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-400 mb-10 font-light">
-            {t.hero.subtitle}
+            Código limpio. Diseño profesional. Sin complicaciones.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <CustomButton variant="primary" size="lg" onClick={() => setLocation('/servicios')}>
-              {t.hero.cta1}
+              Ver Servicios
             </CustomButton>
             <CustomButton
               variant="secondary"
               size="lg"
               onClick={() => window.open('https://calendly.com/studiohighimpact/30min', '_blank')}
             >
-              {t.hero.cta2}
+              Agendar llamada
             </CustomButton>
           </div>
         </motion.div>
