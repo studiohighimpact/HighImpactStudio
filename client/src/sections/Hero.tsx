@@ -11,14 +11,18 @@ export default function Hero() {
       id="hero" 
       className="relative min-h-screen flex items-center pt-20 overflow-hidden"
     >
-      {/* Background */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/70 z-10" /> {/* Overlay */}
-        <img 
-          src="https://res.cloudinary.com/dwspyodrs/image/upload/v1765984452/hq720_lxheye.jpg" 
-          alt="Background" 
-          className="w-full h-full object-cover opacity-60"
-        />
+        <div className="absolute inset-0 bg-black/60 z-10" /> {/* Overlay */}
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/herovideo.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-20" />
       </div>
 
