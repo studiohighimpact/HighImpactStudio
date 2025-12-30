@@ -73,9 +73,9 @@ export default function ContactPage() {
           <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-black/70 z-10" />
             <img 
-              src="https://res.cloudinary.com/dwspyodrs/image/upload/v1765987279/5f5b74f79bd6983b85d41918_06_CONTACTO_VIVUS_us2y5o.jpg" 
+              src="https://res.cloudinary.com/dwspyodrs/image/upload/v1767118614/glowing-contact-us-logo-qx58564q7a51etk6_lk1p8z.jpg" 
               alt="Background" 
-              className="w-full h-full object-cover opacity-60"
+              className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black z-20" />
           </div>

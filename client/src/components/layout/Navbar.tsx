@@ -21,8 +21,8 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Inicio', href: '/' },
     { name: 'Servicios', href: '/servicios' },
-    { name: 'Sobre mí', href: '/sobre-mi' },
     { name: 'Proyectos', href: '/proyectos' },
+    { name: 'Sobre mí', href: '/sobre-mi' },
     { name: 'Contacto', href: '/contacto' },
   ];
 
@@ -64,8 +64,8 @@ export default function Navbar() {
               {link.name}
             </button>
           ))}
-          <CustomButton variant="primary" size="sm" onClick={() => handleNavClick('/contacto')}>
-            Impacto
+          <CustomButton variant="primary" size="sm" onClick={() => window.open('https://calendly.com/studiohighimpact/30min', '_blank')}>
+            Reservar llamada
           </CustomButton>
         </div>
 
@@ -97,8 +97,8 @@ export default function Navbar() {
               </button>
             ))}
             <div className="pt-4">
-              <CustomButton variant="primary" className="w-full" onClick={() => handleNavClick('/contacto')}>
-                Impacto
+              <CustomButton variant="primary" className="w-full" onClick={() => window.open('https://calendly.com/studiohighimpact/30min', '_blank')}>
+                Reservar llamada
               </CustomButton>
             </div>
           </motion.div>

@@ -39,26 +39,45 @@ export default function VideoPresentation() {
         </div>
 
         <div className="relative w-full max-w-4xl mx-auto group">
-          {/* Video Container */}
-          <div className="relative w-full overflow-hidden rounded-lg bg-black/50 border border-white/10">
-            <div style={{ paddingBottom: '56.25%' }} className="relative h-0">
-              <iframe
-                ref={setVideoElement}
-                src={isMobile 
-                  ? "https://player.vimeo.com/video/1143529692?autoplay=0&controls=1&loop=false&muted=false"
-                  : "https://player.vimeo.com/video/1143529692?autoplay=0&controls=0&loop=false&muted=false"}
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                title="High Impact Studio - Presentación"
-                className="absolute top-0 left-0 w-full h-full"
-              />
+          {/* Window Frame */}
+          <div className="relative rounded-xl overflow-hidden shadow-2xl border border-white/10">
+            {/* Window Title Bar */}
+            <div className="bg-[#2d2d2d] px-4 py-3 flex items-center gap-2">
+              {/* Traffic Light Buttons */}
+              <div className="flex items-center gap-2">
+                <div className="w-3 h-3 rounded-full bg-[#ff5f57] hover:bg-[#ff5f57]/80 transition-colors" />
+                <div className="w-3 h-3 rounded-full bg-[#ffbd2e] hover:bg-[#ffbd2e]/80 transition-colors" />
+                <div className="w-3 h-3 rounded-full bg-[#28ca41] hover:bg-[#28ca41]/80 transition-colors" />
+              </div>
+              {/* Window Title */}
+              <div className="flex-1 text-center">
+                <span className="text-white/50 text-sm">High Impact Studio - Presentación</span>
+              </div>
+              {/* Spacer for balance */}
+              <div className="w-14" />
+            </div>
+            
+            {/* Video Container */}
+            <div className="relative w-full bg-black">
+              <div style={{ paddingBottom: '56.25%' }} className="relative h-0">
+                <iframe
+                  ref={setVideoElement}
+                  src={isMobile 
+                    ? "https://player.vimeo.com/video/1143529692?autoplay=0&controls=1&loop=false&muted=false"
+                    : "https://player.vimeo.com/video/1143529692?autoplay=0&controls=0&loop=false&muted=false"}
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="High Impact Studio - Presentación"
+                  className="absolute top-0 left-0 w-full h-full"
+                />
+              </div>
             </div>
           </div>
 
           {/* Custom Play Button - Only on Desktop (hidden on mobile) */}
           {!isMobile && (
-            <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg pointer-events-none group-hover:pointer-events-auto">
+            <div className="absolute inset-0 top-12 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none group-hover:pointer-events-auto">
               <button
                 onClick={togglePlayPause}
                 className="flex items-center justify-center w-20 h-20 bg-white text-black rounded-full hover:bg-gray-200 transition-colors duration-300 shadow-lg"

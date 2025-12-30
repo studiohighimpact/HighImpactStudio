@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Check, Zap, Clock, CreditCard, Building2, Bitcoin, Wallet } from 'lucide-react';
+import { Check, Clock, CreditCard, Building2, Bitcoin, Wallet } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -33,11 +33,10 @@ const metodosPago = [
   }
 ];
 
-const ofertasFinDeAnio = [
+const serviciosGenerales = [
   {
     name: "LANDING PAGE",
-    originalPrice: "400 USD",
-    price: "350 USD",
+    price: "400 USD",
     description: "Página única diseñada para captar clientes. Ideal para cualquier negocio que necesite presencia web rápida y efectiva.",
     features: [
       "Diseño 100% personalizado",
@@ -50,17 +49,13 @@ const ofertasFinDeAnio = [
       "Botón WhatsApp flotante",
       "Formulario de contacto",
       "Google Maps integrado",
-      "Hosting + Dominio .com por 1 año",
-      "Mantenimiento GRATIS 1 mes"
     ],
-    delivery: "Entrega en 7 días hábiles",
-    badge: "OFERTA FIN DE AÑO",
-    popular: false
+    delivery: "Entrega en 5 días hábiles",
+    badge: null
   },
   {
     name: "WEB INSTITUCIONAL",
-    originalPrice: "800 USD",
-    price: "750 USD",
+    price: "800 USD",
     description: "Presencia web completa con múltiples secciones. Perfecta para cualquier empresa o negocio que busca proyectar seriedad y profesionalismo.",
     features: [
       "Hasta 6 páginas completas",
@@ -74,17 +69,11 @@ const ofertasFinDeAnio = [
       "Equipo con biografías completas",
       "Valores corporativos",
       "Google Maps + WhatsApp",
-      "Hosting + Dominio .com por 1 año",
-      "Mantenimiento GRATIS 1 mes",
-      "5 Emails corporativos incluidos"
+      "Formulario avanzado"
     ],
     delivery: "Entrega en ~10 días hábiles",
-    badge: "OFERTA FIN DE AÑO",
-    popular: true
-  }
-];
-
-const serviciosGenerales = [
+    badge: null
+  },
   {
     name: "WEB INMOBILIARIA PRO",
     price: "700 USD",
@@ -98,7 +87,7 @@ const serviciosGenerales = [
       "Reseñas de Google Maps",
       "Integración con redes sociales"
     ],
-    delivery: "Entrega en 5 días",
+    delivery: "Entrega en 10 días",
     badge: null
   },
   {
@@ -113,7 +102,7 @@ const serviciosGenerales = [
       "Reseñas de Google Maps",
       "Integraciones"
     ],
-    delivery: "Entrega en 4/5 días",
+    delivery: "Entrega en 10 días",
     badge: null
   },
   {
@@ -128,7 +117,7 @@ const serviciosGenerales = [
       "Reseñas Google Maps o testimonios",
       "Animaciones"
     ],
-    delivery: "Entrega en 3/4 días",
+    delivery: "Entrega en 10 días",
     badge: null
   },
   {
@@ -143,7 +132,7 @@ const serviciosGenerales = [
       "Fácil actualización",
       "Pedidos por WhatsApp"
     ],
-    delivery: "Entrega en 2/3 días",
+    delivery: "Entrega en 10 días",
     badge: null
   },
   {
@@ -157,7 +146,7 @@ const serviciosGenerales = [
       "WhatsApp integrado",
       "Google Maps"
     ],
-    delivery: "Entrega en 3-4 días",
+    delivery: "Entrega en 5 días",
     badge: null
   },
   {
@@ -173,7 +162,7 @@ const serviciosGenerales = [
       "Carrito de compras",
       "Gestión de stock"
     ],
-    delivery: "Entrega en 14 días",
+    delivery: "Entrega en 15 días",
     badge: null
   }
 ];
@@ -255,86 +244,6 @@ export default function ServicesPage() {
 
         <div className="container mx-auto px-4">
 
-          {/* Ofertas Fin de Año */}
-          <section className="mb-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-                Ofertas de Fin de Año
-              </h2>
-              <p className="text-white/60">
-                Precios especiales en Landing Pages y Webs Institucionales hasta el 31 de diciembre
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-8">
-              {ofertasFinDeAnio.map((plan, index) => (
-                <motion.div
-                  key={plan.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`relative bg-gradient-to-b from-white/5 to-white/[0.02] backdrop-blur-sm border ${
-                    plan.popular ? 'border-white/30' : 'border-white/10'
-                  } p-8 rounded-lg hover:border-white/30 transition-all duration-300 flex flex-col`}
-                >
-                  {plan.badge && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-red-600 text-white text-xs font-bold tracking-wider rounded-full">
-                      {plan.badge}
-                    </div>
-                  )}
-
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-3">{plan.name}</h3>
-                    <div className="flex items-baseline gap-2 mb-3">
-                      {plan.originalPrice && (
-                        <span className="text-white/40 text-lg line-through">ARS ${plan.originalPrice}</span>
-                      )}
-                      <span className="text-4xl font-bold text-white">ARS ${plan.price}</span>
-                    </div>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {plan.description}
-                    </p>
-                  </div>
-
-                  <div className="mb-6 flex items-center gap-2 text-sm text-white/70 bg-white/5 px-3 py-2 rounded border border-white/10">
-                    <Clock className="w-4 h-4" />
-                    <span>{plan.delivery}</span>
-                  </div>
-
-                  <ul className="space-y-2 mb-8 flex-grow">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm text-white/80">
-                        <Check className="w-4 h-4 text-white shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button
-                    variant={plan.popular ? "default" : "outline"}
-                    className={`w-full ${
-                      plan.popular
-                        ? 'bg-white text-black hover:bg-white/90'
-                        : 'border-white/20 hover:border-white/40 hover:bg-white/5 text-white'
-                    }`}
-                    asChild
-                  >
-                    <a href="/contacto">
-                      Solicitar <Zap className="w-4 h-4 ml-2" />
-                    </a>
-                  </Button>
-                </motion.div>
-              ))}
-            </div>
-          </section>
-
           {/* Servicios Generales */}
           <section className="mb-24">
             <motion.div
@@ -411,7 +320,7 @@ export default function ServicesPage() {
                 Planes de Mantenimiento
               </h2>
               <p className="text-white/60">
-                Todos los sitios incluyen 1 mes de mantenimiento GRATIS. Después podés contratar un plan opcional.
+                Todos los sitios son con mantenimiento mensual. Después podés contratar un plan opcional. Esta pensado para que nunca te preocupes por nada tecnico, nosotros nos encargamos de todo.
               </p>
             </motion.div>
 
@@ -472,7 +381,7 @@ export default function ServicesPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
               {metodosPago.map((metodo, index) => (
                 <motion.div
                   key={metodo.name}
@@ -480,11 +389,10 @@ export default function ServicesPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10 p-6 rounded-lg hover:border-white/30 transition-all duration-300 text-center"
+                  className="bg-gradient-to-b from-white/5 to-white/[0.02] border border-white/10 px-6 py-4 rounded-full hover:border-white/30 transition-all duration-300 flex items-center gap-3"
                 >
-                  <metodo.icon className="w-8 h-8 text-white mx-auto mb-3" />
-                  <h3 className="text-white font-semibold mb-1">{metodo.name}</h3>
-                  <p className="text-white/50 text-xs">{metodo.description}</p>
+                  <metodo.icon className="w-5 h-5 text-white/70" />
+                  <span className="text-white font-medium text-sm">{metodo.name}</span>
                 </motion.div>
               ))}
             </div>

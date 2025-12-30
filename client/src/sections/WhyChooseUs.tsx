@@ -5,17 +5,17 @@ const benefits = [
   {
     icon: Code,
     title: "Código limpio y profesional",
-    description: "Desarrollamos con las últimas tecnologías y mejores prácticas. Código mantenible, escalable y optimizado para máximo rendimiento."
+    description: "Desarrollamos con las últimas tecnologías y mejores prácticas. Nada de plantillas genericas feas. Hacemos códigos mantenibles, escalables y optimizados para máximo rendimiento."
   },
   {
     icon: Shield,
-    title: "100% legal y transparente",
-    description: "Presupuesto formal con detalle de costos. Contrato de servicios profesional. Factura tipo A/B. Todo en regla para tu tranquilidad."
+    title: "100% transparente",
+    description: "Presupuesto formal con detalle de costos. Todo el proceso explicado paso a paso. Comunicación clara y constante para que siempre sepas en qué estado está tu proyecto."
   },
   {
     icon: Gift,
     title: "Hosting y soporte incluido",
-    description: "Hosting profesional y dominio por 1 año sin costo adicional. Mantenimiento y soporte técnico durante el primer mes completamente gratis."
+    description: "Hosting profesional y dominio. Mantenimiento y soporte técnico para que tu web siempre esté actualizada, segura y rápida. Nos encargamos de todo para que no tengas que preocuparte por nada."
   }
 ];
 
