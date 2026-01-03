@@ -181,14 +181,14 @@ export default function Contact() {
   const logoScale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
-    <section ref={sectionRef} id="contact" className="relative min-h-screen bg-black overflow-hidden py-24">
+    <section ref={sectionRef} id="contact" className="relative min-h-screen bg-black py-24">
       {/* Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header - Centered Text */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -213,7 +213,7 @@ export default function Contact() {
         </motion.div>
 
         {/* Main Grid - Calendly + Form + Social */}
-        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto px-2 sm:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 max-w-7xl mx-auto">
           
           {/* Left Column - Calendly Embed */}
           <motion.div
@@ -348,8 +348,8 @@ export default function Contact() {
             </div>
 
             {/* Social Links - Animated */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-8 pb-16">
-              <h3 className="text-xl font-bold text-white mb-16 text-center">Síguenos</h3>
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 sm:p-8">
+              <h3 className="text-xl font-bold text-white mb-8 text-center">Síguenos</h3>
               <AnimatedSocialLinks 
                 socials={socialLinks} 
               />

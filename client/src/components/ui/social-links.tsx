@@ -38,7 +38,7 @@ const AnimatedSocialLinks = React.forwardRef<
   return (
     <div
       ref={ref}
-      className={`flex items-center justify-center gap-0 ${className || ''}`}
+      className={`flex flex-wrap items-center justify-center gap-2 sm:gap-0 ${className || ''}`}
       {...props}
     >
       {socials.map((social, index) => (
@@ -46,7 +46,7 @@ const AnimatedSocialLinks = React.forwardRef<
           href={social.href || '#'}
           target="_blank"
           rel="noopener noreferrer"
-          className={`relative cursor-pointer px-5 py-2 transition-opacity duration-200 ${
+          className={`relative cursor-pointer px-3 sm:px-5 py-3 transition-opacity duration-200 ${
             hoveredSocial && hoveredSocial !== social.name
               ? 'opacity-50'
               : 'opacity-100'
@@ -61,26 +61,26 @@ const AnimatedSocialLinks = React.forwardRef<
             setCliked(true);
           }}
         >
-          <span className="block text-lg text-white">{social.name}</span>
+          <span className="block text-base sm:text-lg text-white">{social.name}</span>
           <AnimatePresence>
             {hoveredSocial === social.name && (
               <motion.div
-                className="absolute bottom-0 left-0 right-0 flex h-full w-full items-center justify-center"
+                className="absolute bottom-full left-1/2 -translate-x-1/2 flex items-center justify-center pointer-events-none"
                 animate={animation}
               >
                 <motion.img
                   key={social.name}
                   src={social.image}
                   alt={social.name}
-                  className="size-16"
+                  className="w-12 h-12 sm:w-16 sm:h-16"
                   initial={{
-                    y: -40,
+                    y: 10,
                     rotate: rotation,
                     opacity: 0,
                     filter: 'blur(2px)',
                   }}
-                  animate={{ y: -50, opacity: 1, filter: 'blur(0px)' }}
-                  exit={{ y: -40, opacity: 0, filter: 'blur(2px)' }}
+                  animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                  exit={{ y: 10, opacity: 0, filter: 'blur(2px)' }}
                   transition={{ duration: 0.2 }}
                 />
               </motion.div>
