@@ -82,9 +82,10 @@ export default function VideoPresentation() {
             <div className="relative w-full bg-black">
               <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe
-                  src="https://www.loom.com/embed/0532305edbe24216991ef3ceacdf3514?sid=0532305edbe24216991ef3ceacdf3514"
+                  src="https://www.loom.com/embed/0532305edbe24216991ef3ceacdf3514"
                   frameBorder="0"
                   allowFullScreen
+                  allow="autoplay; fullscreen"
                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                   title="AURA Diseño Web - Presentación"
                 />
