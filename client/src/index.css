@@ -60,13 +60,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  html, body, #root {
+    min-height: 100%;
+    height: auto;
+  }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight;
-  }
-  /* Improve tap targets on mobile */
-  a, button {
-    min-height: 44px;
-    min-width: 44px;
   }
   /* Prevent text selection on buttons for better UX */
   button {

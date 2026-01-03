@@ -181,9 +181,9 @@ export default function Contact() {
   const logoScale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   return (
-    <section ref={sectionRef} id="contact" className="relative min-h-screen bg-black py-24">
+    <section ref={sectionRef} id="contact" className="relative bg-black py-16 sm:py-24">
       {/* Background */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <FloatingPaths position={1} />
         <FloatingPaths position={-1} />
       </div>
@@ -232,10 +232,11 @@ export default function Contact() {
                 <iframe
                   src="https://calendly.com/studiohighimpact/30min?hide_gdpr_banner=1&background_color=ffffff&text_color=000000&primary_color=000000"
                   width="100%"
-                  height="600"
+                  height="550"
                   frameBorder="0"
                   title="Agenda una llamada con AURA"
-                  className="rounded-b-2xl min-h-[500px] sm:min-h-[600px] lg:min-h-[650px]"
+                  className="rounded-b-2xl"
+                  style={{ minHeight: '450px' }}
                   loading="lazy"
                 />
               </div>
