@@ -1,67 +1,11 @@
 <svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="256" height="256" fill="#000000"/>
-  
-  <!-- Gradient definitions -->
-  <defs>
-    <linearGradient id="neuralGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#888888;stop-opacity:1" />
-    </linearGradient>
-    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0" />
-    </radialGradient>
-  </defs>
-  
-  <!-- Central neural network nodes -->
-  <!-- Center node -->
-  <circle cx="128" cy="128" r="16" fill="url(#neuralGradient)" opacity="0.95"/>
-  <circle cx="128" cy="128" r="16" fill="url(#glowGradient)" opacity="0.5"/>
-  
-  <!-- Top node -->
-  <circle cx="128" cy="70" r="12" fill="url(#neuralGradient)" opacity="0.85"/>
-  
-  <!-- Bottom node -->
-  <circle cx="128" cy="186" r="12" fill="url(#neuralGradient)" opacity="0.85"/>
-  
-  <!-- Left node -->
-  <circle cx="70" cy="128" r="12" fill="url(#neuralGradient)" opacity="0.85"/>
-  
-  <!-- Right node -->
-  <circle cx="186" cy="128" r="12" fill="url(#neuralGradient)" opacity="0.85"/>
-  
-  <!-- Top-left node -->
-  <circle cx="92" cy="92" r="10" fill="url(#neuralGradient)" opacity="0.75"/>
-  
-  <!-- Top-right node -->
-  <circle cx="164" cy="92" r="10" fill="url(#neuralGradient)" opacity="0.75"/>
-  
-  <!-- Bottom-left node -->
-  <circle cx="92" cy="164" r="10" fill="url(#neuralGradient)" opacity="0.75"/>
-  
-  <!-- Bottom-right node -->
-  <circle cx="164" cy="164" r="10" fill="url(#neuralGradient)" opacity="0.75"/>
-  
-  <!-- Connecting lines (neural pathways) -->
-  <!-- Center to cardinal directions -->
-  <line x1="128" y1="144" x2="128" y2="186" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="128" y1="112" x2="128" y2="70" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="112" y1="128" x2="70" y2="128" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="144" y1="128" x2="186" y2="128" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-  
-  <!-- Center to diagonals -->
-  <line x1="120" y1="120" x2="92" y2="92" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="136" y1="120" x2="164" y2="92" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="120" y1="136" x2="92" y2="164" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
-  <line x1="136" y1="136" x2="164" y2="164" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
-  
-  <!-- Secondary connections (orbital pattern) -->
-  <line x1="92" y1="92" x2="128" y2="70" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-linecap="round"/>
-  <line x1="164" y1="92" x2="128" y2="70" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-linecap="round"/>
-  <line x1="92" y1="164" x2="128" y2="186" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-linecap="round"/>
-  <line x1="164" y1="164" x2="128" y2="186" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-linecap="round"/>
-  
-  <!-- Subtle outer ring -->
-  <circle cx="128" cy="128" r="110" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1" stroke-dasharray="5,10"/>
+  <text 
+    x="128" 
+    y="195" 
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" 
+    font-size="200" 
+    font-weight="bold" 
+    fill="#FFFFFF" 
+    text-anchor="middle"
+  >A</text>
 </svg>
