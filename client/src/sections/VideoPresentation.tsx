@@ -82,10 +82,8 @@ export default function VideoPresentation() {
             <div className="relative w-full bg-black">
               <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe
-                  src="https://player.vimeo.com/video/1151223740?badge=0&autopause=0&player_id=0&app_id=58479"
+                  src="https://www.loom.com/embed/0532305edbe24216991ef3ceacdf3514?sid=0532305edbe24216991ef3ceacdf3514"
                   frameBorder="0"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   allowFullScreen
                   style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                   title="AURA Diseño Web - Presentación"
