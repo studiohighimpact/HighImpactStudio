@@ -89,7 +89,7 @@ export default function About() {
             <div className="relative w-full max-w-md mx-auto aspect-square bg-black grayscale">
               <img 
                 src="https://res.cloudinary.com/dwspyodrs/image/upload/v1764303488/Webaxel_-_1_gtpzmg.png" 
-                alt="Axel Rodriguez, fundador de High Impact Studio" 
+                alt="Axel Rodriguez, fundador de AURA Diseño Web" 
                 className="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity duration-500"
               />
               {/* Decorative Elements */}
@@ -110,7 +110,7 @@ export default function About() {
             
             <div className="space-y-6 text-lg text-gray-300 leading-relaxed">
               <p>
-                <span className="text-white font-semibold">Mi nombre es Axel Rodríguez, fundador de High Impact Studio, y soy de Córdoba, Argentina.</span>
+                <span className="text-white font-semibold">Mi nombre es Axel Rodríguez, fundador de AURA Diseño Web, y soy de Córdoba, Argentina.</span>
               </p>
               <p>
                 Tengo certificaciones como Professional Software Developer por Digital House y actualmente estudio la Tecnicatura en Desarrollo de Software en el ISPC.

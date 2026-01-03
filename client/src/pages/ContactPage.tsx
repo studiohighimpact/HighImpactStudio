@@ -31,7 +31,7 @@ export default function ContactPage() {
           phone: formData.phone,
           service: formData.service,
           message: formData.message,
-          subject: `Nuevo contacto desde High Impact Studio - ${formData.service}`,
+          subject: `Nuevo contacto desde AURA Diseño Web - ${formData.service}`,
         }),
       });
 

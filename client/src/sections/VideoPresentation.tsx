@@ -90,7 +90,7 @@ export default function VideoPresentation() {
               </div>
               {/* Window Title */}
               <div className="flex-1 text-center">
-                <span className="text-white/50 text-sm">High Impact Studio - Presentación</span>
+                <span className="text-white/50 text-sm">AURA Diseño Web - Presentación</span>
               </div>
               {/* Spacer for balance */}
               <div className="w-14" />
@@ -106,7 +106,7 @@ export default function VideoPresentation() {
                   allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
-                  title="High Impact Studio - Presentación"
+                  title="AURA Diseño Web - Presentación"
                   className="absolute top-0 left-0 w-full h-full"
                 />
               </div>
