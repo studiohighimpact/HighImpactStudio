@@ -349,8 +349,8 @@ export default function Contact() {
             </div>
 
             {/* Social Links - Animated */}
-            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 sm:p-8">
-              <h3 className="text-xl font-bold text-white mb-8 text-center">Síguenos</h3>
+            <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 sm:p-8 pt-16 sm:pt-20">
+              <h3 className="text-xl font-bold text-white mb-12 text-center">Síguenos</h3>
               <AnimatedSocialLinks 
                 socials={socialLinks} 
               />
