@@ -44,3 +44,4 @@ nyc_output/
 attached_assets/generated_images/
 .vercel
 .env*.local
+asset/presentacion.MOV

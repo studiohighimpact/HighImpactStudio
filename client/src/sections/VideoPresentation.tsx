@@ -1,10 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Play, Pause, Volume2, ChevronDown } from 'lucide-react';
+import { Volume2, ChevronDown } from 'lucide-react';
 
 export default function VideoPresentation() {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [videoElement, setVideoElement] = useState<HTMLIFrameElement | null>(null);
   const [isMobile, setIsMobile] = useState(() => {
     if (typeof window === 'undefined') return false;
     return window.innerWidth <= 768 || 'ontouchstart' in window;
@@ -26,22 +24,6 @@ export default function VideoPresentation() {
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window);
   }, []);
-
-  const togglePlayPause = () => {
-    const nextPlaying = !isPlaying;
-    setIsPlaying(nextPlaying);
-    if (videoElement && videoElement.contentWindow) {
-      try {
-        if (nextPlaying) {
-          videoElement.contentWindow.postMessage({ method: 'play' }, '*');
-        } else {
-          videoElement.contentWindow.postMessage({ method: 'pause' }, '*');
-        }
-      } catch (e) {
-        // ignore cross-origin quirks
-      }
-    }
-  };
 
   return (
     <section 
@@ -98,37 +80,17 @@ export default function VideoPresentation() {
             
             {/* Video Container */}
             <div className="relative w-full bg-black">
-              <div style={{ paddingBottom: '56.25%' }} className="relative h-0">
+              <div style={{ padding: '56.25% 0 0 0', position: 'relative' }}>
                 <iframe
-                  ref={setVideoElement}
-                  src="https://player.vimeo.com/video/1143529692?badge=0&autopause=0&player_id=0&app_id=58479"
+                  src="https://player.vimeo.com/video/1151219147?badge=0&autopause=0&player_id=0&app_id=58479"
                   frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                   title="AURA Diseño Web - Presentación"
-                  className="absolute top-0 left-0 w-full h-full"
                 />
               </div>
             </div>
           </div>
-
-          {/* Custom Play Button - Only on Desktop */}
-          {!isMobile && (
-            <div className="absolute inset-0 top-12 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none group-hover:pointer-events-auto">
-              <button
-                onClick={togglePlayPause}
-                className="flex items-center justify-center w-20 h-20 bg-white text-black rounded-full hover:bg-gray-200 transition-colors duration-300 shadow-lg"
-                aria-label={isPlaying ? 'Pausar video' : 'Reproducir video'}
-              >
-                {isPlaying ? (
-                  <Pause size={40} fill="currentColor" />
-                ) : (
-                  <Play size={40} fill="currentColor" className="ml-1" />
-                )}
-              </button>
-            </div>
-          )}
         </motion.div>
 
         {/* Info Note */}
