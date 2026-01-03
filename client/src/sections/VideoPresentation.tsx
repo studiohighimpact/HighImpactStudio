@@ -5,7 +5,10 @@ import { Play, Pause, Volume2, ChevronDown } from 'lucide-react';
 export default function VideoPresentation() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoElement, setVideoElement] = useState<HTMLIFrameElement | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.innerWidth <= 768 || 'ontouchstart' in window;
+  });
   
   const sectionRef = useRef<HTMLDivElement>(null);
   
@@ -21,9 +24,7 @@ export default function VideoPresentation() {
 
   // Detect mobile at mount time
   useEffect(() => {
-    const isTouch = typeof window !== 'undefined' && (('ontouchstart' in window) || (navigator.maxTouchPoints && navigator.maxTouchPoints > 0));
-    const isSmall = typeof window !== 'undefined' && window.innerWidth <= 768;
-    setIsMobile(isTouch || isSmall);
+    setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window);
   }, []);
 
   const togglePlayPause = () => {

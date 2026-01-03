@@ -115,7 +115,10 @@ function FloatingPaths({ position, isMobile }: { position: number; isMobile: boo
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.innerWidth <= 768 || 'ontouchstart' in window;
+  });
   
   useEffect(() => {
     setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window);

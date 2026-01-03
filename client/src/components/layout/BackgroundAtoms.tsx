@@ -12,16 +12,17 @@ const ATOMS = [
 
 export default function BackgroundAtoms() {
   const [mouse, setMouse] = useState<MousePos>({ x: 0.5, y: 0.5 });
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.innerWidth <= 768 || 'ontouchstart' in window;
+  });
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window);
-    };
-    checkMobile();
+    const checkMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+    setIsMobile(checkMobile);
     
     // Skip mouse tracking on mobile for performance
-    if (isMobile) return;
+    if (checkMobile) return;
     
     const handleMove = (e: PointerEvent) => {
       const x = e.clientX / window.innerWidth;
@@ -31,7 +32,7 @@ export default function BackgroundAtoms() {
 
     window.addEventListener('pointermove', handleMove, { passive: true });
     return () => window.removeEventListener('pointermove', handleMove);
-  }, [isMobile]);
+  }, []);
 
   // On mobile, render simplified background
   if (isMobile) {
