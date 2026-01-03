@@ -45,8 +45,10 @@ function TypewriterText({ text, className }: { text: string; className?: string 
   );
 }
 
-function FloatingPaths({ position }: { position: number }) {
-  const paths = Array.from({ length: 36 }, (_, i) => ({
+function FloatingPaths({ position, isMobile }: { position: number; isMobile: boolean }) {
+  // Reduce paths on mobile for better performance
+  const pathCount = isMobile ? 8 : 36;
+  const paths = Array.from({ length: pathCount }, (_, i) => ({
     id: i,
     d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
       380 - i * 5 * position
@@ -57,6 +59,26 @@ function FloatingPaths({ position }: { position: number }) {
     } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
     width: 0.5 + i * 0.03,
   }));
+
+  // On mobile, render static paths without animation
+  if (isMobile) {
+    return (
+      <div className="absolute inset-0 pointer-events-none">
+        <svg className="w-full h-full text-white" viewBox="0 0 696 316" fill="none">
+          <title>Background Paths</title>
+          {paths.map((path) => (
+            <path
+              key={path.id}
+              d={path.d}
+              stroke="currentColor"
+              strokeWidth={path.width}
+              strokeOpacity={0.1 + path.id * 0.02}
+            />
+          ))}
+        </svg>
+      </div>
+    );
+  }
 
   return (
     <div className="absolute inset-0 pointer-events-none">
@@ -93,15 +115,20 @@ function FloatingPaths({ position }: { position: number }) {
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
   
-  // Parallax effect
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window);
+  }, []);
+  
+  // Parallax effect - disabled on mobile for performance
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"]
   });
   
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
-  const contentY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "50%"]);
+  const contentY = useTransform(scrollYProgress, [0, 1], isMobile ? ["0%", "0%"] : ["0%", "30%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.5, 0]);
   
   const scrollToSection = (id: string) => {
@@ -123,8 +150,8 @@ export default function Hero() {
           className="absolute inset-0"
           style={{ y: backgroundY }}
         >
-          <FloatingPaths position={1} />
-          <FloatingPaths position={-1} />
+          <FloatingPaths position={1} isMobile={isMobile} />
+          {!isMobile && <FloatingPaths position={-1} isMobile={isMobile} />}
         </motion.div>
 
         {/* Content with Parallax */}

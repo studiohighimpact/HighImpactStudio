@@ -11,12 +11,8 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const [showCursor, setShowCursor] = useState(true);
 
   const codeLines = [
-    'const brandName = "AURA";',
-    'const service = "diseño web";',
-    '',
+    'const brandName = "HIGH IMPACT";',
     'let isReady = true;',
-    '',
-    '// Cargando experiencia...',
   ];
 
   const fullCode = codeLines.join('\n');
@@ -42,7 +38,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
         clearInterval(typingInterval);
         setPhase('value');
       }
-    }, 35);
+    }, 25); // Faster typing
 
     return () => clearInterval(typingInterval);
   }, [phase, fullCode]);
@@ -52,21 +48,21 @@ export default function Preloader({ onComplete }: PreloaderProps) {
     if (phase === 'value') {
       const timer = setTimeout(() => {
         setPhase('complete');
-      }, 800);
+      }, 400); // Faster
       return () => clearTimeout(timer);
     }
     
     if (phase === 'complete') {
       const timer = setTimeout(() => {
         setPhase('exit');
-      }, 500);
+      }, 300); // Faster
       return () => clearTimeout(timer);
     }
 
     if (phase === 'exit') {
       const timer = setTimeout(() => {
         onComplete();
-      }, 800);
+      }, 500); // Faster
       return () => clearTimeout(timer);
     }
   }, [phase, onComplete]);
@@ -130,7 +126,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                   <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                   <div className="w-3 h-3 rounded-full bg-green-500/80" />
                 </div>
-                <span className="text-white/40 text-sm ml-4 font-mono">aura.config.js</span>
+                <span className="text-white/40 text-sm ml-4 font-mono">high-impact.config.js</span>
               </div>
 
               {/* Code content */}
@@ -174,7 +170,7 @@ export default function Preloader({ onComplete }: PreloaderProps) {
                           className="w-3 h-3 rounded-full bg-green-500"
                         />
                         <span className="text-green-400 font-mono text-sm">
-                          ✓ Iniciando AURA...
+                          ✓ Iniciando High Impact...
                         </span>
                       </div>
                     </motion.div>
