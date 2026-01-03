@@ -1,109 +1,66 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'wouter';
-import { CustomButton } from '@/components/ui/custom-button';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import { GetStartedButton } from '@/components/ui/get-started-button';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [location, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const navLinks = [
-    { name: 'Inicio', href: '/' },
-    { name: 'Servicios', href: '/servicios' },
-    { name: 'Proyectos', href: '/proyectos' },
-    { name: 'Sobre mí', href: '/sobre-mi' },
-    { name: 'Contacto', href: '/contacto' },
-  ];
-
-  const handleNavClick = (href: string) => {
-    setMobileMenuOpen(false);
-    setLocation(href);
-  };
 
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-transparent",
-        isScrolled ? "bg-black/80 backdrop-blur-md border-white/10 py-4" : "bg-transparent py-6"
+        isScrolled ? "bg-black/80 backdrop-blur-md border-white/10 py-3 sm:py-4" : "bg-transparent py-4 sm:py-6"
       )}
+      role="navigation"
+      aria-label="Navegación principal"
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('/')}>
-          <div className="w-8 h-8 flex items-center justify-center overflow-hidden">
-            <img
-              src="https://res.cloudinary.com/dwspyodrs/image/upload/v1765985290/Logotipo_para_Agencia_de_Marketing_Digital_Minimalista_Negro_1_nvxbje.png"
-              alt="High Impact Studio logo"
-              className="w-full h-full object-contain"
-            />
-          </div>
-          <span className="text-white font-heading font-bold text-xl tracking-tighter hidden sm:block">
-            HIGH IMPACT STUDIO
-          </span>
-        </div>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => handleNavClick(link.href)}
-              className="text-sm text-gray-400 hover:text-white transition-colors uppercase tracking-wide"
-            >
-              {link.name}
-            </button>
-          ))}
-          <CustomButton variant="primary" size="sm" onClick={() => window.open('https://calendly.com/studiohighimpact/30min', '_blank')}>
-            Reservar llamada
-          </CustomButton>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-white p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
+        {/* Logo Text with Animation */}
+        <motion.a 
+          href="#hero"
+          className="flex items-center gap-1.5 sm:gap-2 cursor-pointer group"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6 }}
+          aria-label="AURA Diseño Web - Ir al inicio"
         >
-          {mobileMenuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-black border-b border-white/10 p-6 md:hidden flex flex-col gap-4 shadow-2xl"
+          <motion.span 
+            className="text-xl sm:text-2xl font-bold tracking-tight"
+            whileHover={{ scale: 1.05 }}
           >
-            {navLinks.map((link) => (
-              <button
-                key={link.name}
-                onClick={() => handleNavClick(link.href)}
-                className="text-left text-lg text-gray-300 hover:text-white py-2 border-b border-white/5"
-              >
-                {link.name}
-              </button>
-            ))}
-            <div className="pt-4">
-              <CustomButton variant="primary" className="w-full" onClick={() => window.open('https://calendly.com/studiohighimpact/30min', '_blank')}>
-                Reservar llamada
-              </CustomButton>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            <span className="relative">
+              <span className="bg-gradient-to-r from-white via-purple-200 to-white bg-clip-text text-transparent bg-[length:200%_100%] animate-shimmer">
+                AURA
+              </span>
+            </span>
+          </motion.span>
+          <motion.span 
+            className="text-xs sm:text-sm text-white/60 font-light tracking-wider uppercase hidden xs:block whitespace-nowrap"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            diseño web
+          </motion.span>
+        </motion.a>
+
+        {/* CTA Button */}
+        <div 
+          onClick={() => window.open('https://calendly.com/disenowebaura/30min', '_blank')}
+          className="touch-manipulation"
+        >
+          <GetStartedButton text="Reservar llamada" />
+        </div>
+      </div>
     </nav>
   );
 }

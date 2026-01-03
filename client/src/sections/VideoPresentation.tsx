@@ -1,10 +1,26 @@
-import { useEffect, useState } from 'react';
-import { Play, Pause, Volume2 } from 'lucide-react';
+import { useEffect, useState, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Play, Pause, Volume2, ChevronDown } from 'lucide-react';
 
 export default function VideoPresentation() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [videoElement, setVideoElement] = useState<HTMLIFrameElement | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Scroll-based animations
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  
+  // Video container expansion: starts small, expands to full width
+  const scale = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [0.6, 0.85, 1, 0.85, 0.6]);
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5, 0.8, 1], [0, 1, 1, 1, 0]);
+  const borderRadius = useTransform(scrollYProgress, [0, 0.3, 0.5, 0.7, 1], [40, 20, 12, 20, 40]);
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [100, 0, -100]);
 
   // Detect mobile at mount time
   useEffect(() => {
@@ -17,7 +33,6 @@ export default function VideoPresentation() {
     const nextPlaying = !isPlaying;
     setIsPlaying(nextPlaying);
     if (videoElement && videoElement.contentWindow) {
-      // Vimeo iframe API: postMessage for playback control
       try {
         if (nextPlaying) {
           videoElement.contentWindow.postMessage({ method: 'play' }, '*');
@@ -31,16 +46,51 @@ export default function VideoPresentation() {
   };
 
   return (
-    <section id="video-presentation" className="py-24 bg-black relative">
-      <div className="container mx-auto px-6">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Presentación</h2>
-          <div className="h-1 w-20 bg-white" />
-        </div>
+    <section 
+      ref={sectionRef}
+      id="video-presentation" 
+      className="relative min-h-[200vh] bg-black"
+    >
+      {/* Sticky container for the video */}
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
+        {/* Title - fades based on scroll */}
+        <motion.div 
+          className="text-center mb-8 z-10"
+          style={{ opacity: useTransform(scrollYProgress, [0, 0.15, 0.4, 0.6, 0.85, 1], [0, 1, 1, 1, 1, 0]) }}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-2">Nuestra Presentación</h2>
+          <p className="text-gray-400">Conoce cómo trabajamos</p>
+        </motion.div>
 
-        <div className="relative w-full max-w-4xl mx-auto group">
+        {/* Scroll indicator at top */}
+        <motion.div 
+          className="absolute top-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40"
+          style={{ opacity: useTransform(scrollYProgress, [0, 0.1, 0.2], [1, 0.5, 0]) }}
+        >
+          <span className="text-sm">Desliza para expandir</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          >
+            <ChevronDown className="w-5 h-5" />
+          </motion.div>
+        </motion.div>
+
+        {/* Expanding Video Container */}
+        <motion.div 
+          ref={containerRef}
+          className="relative w-full max-w-6xl mx-auto px-4 group"
+          style={{ 
+            scale,
+            opacity,
+            y
+          }}
+        >
           {/* Window Frame */}
-          <div className="relative rounded-xl overflow-hidden shadow-2xl border border-white/10">
+          <motion.div 
+            className="relative overflow-hidden shadow-2xl border border-white/10"
+            style={{ borderRadius }}
+          >
             {/* Window Title Bar */}
             <div className="bg-[#2d2d2d] px-4 py-3 flex items-center gap-2">
               {/* Traffic Light Buttons */}
@@ -62,20 +112,19 @@ export default function VideoPresentation() {
               <div style={{ paddingBottom: '56.25%' }} className="relative h-0">
                 <iframe
                   ref={setVideoElement}
-                  src={isMobile 
-                    ? "https://player.vimeo.com/video/1143529692?autoplay=0&controls=1&loop=false&muted=false"
-                    : "https://player.vimeo.com/video/1143529692?autoplay=0&controls=0&loop=false&muted=false"}
+                  src="https://player.vimeo.com/video/1143529692?badge=0&autopause=0&player_id=0&app_id=58479"
                   frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
                   title="High Impact Studio - Presentación"
                   className="absolute top-0 left-0 w-full h-full"
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Custom Play Button - Only on Desktop (hidden on mobile) */}
+          {/* Custom Play Button - Only on Desktop */}
           {!isMobile && (
             <div className="absolute inset-0 top-12 flex items-center justify-center bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl pointer-events-none group-hover:pointer-events-auto">
               <button
@@ -91,15 +140,18 @@ export default function VideoPresentation() {
               </button>
             </div>
           )}
+        </motion.div>
 
-          {/* Info Note */}
-          <div className="mt-6 text-center text-gray-400 text-sm">
-            <div className="flex items-center justify-center gap-2">
-              <Volume2 size={16} />
-              <span>Volumen al máximo - Visualiza la presentación completa</span>
-            </div>
+        {/* Info Note */}
+        <motion.div 
+          className="mt-8 text-center text-gray-400 text-sm z-10"
+          style={{ opacity: useTransform(scrollYProgress, [0, 0.2, 0.5, 0.8, 1], [0, 1, 1, 1, 0]) }}
+        >
+          <div className="flex items-center justify-center gap-2">
+            <Volume2 size={16} />
+            <span>Activa el sonido para la mejor experiencia</span>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

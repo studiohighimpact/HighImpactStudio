@@ -2,33 +2,189 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-
-    <title>High Impact Studio | Software & IA</title>
-    <meta name="description" content="Nosotros impulsamos tu negocio profesionalizandolo digitalmente con desarrollo web, desarrollo de software y automatizacion con IA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     
-    <meta property="og:title" content="High Impact Studio | Software & IA" />
-    <meta property="og:description" content="Creamos sitios webs modernos, profesionales y que conviertan una visita en un cliente asegurado." />
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://calendly.com https://assets.calendly.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://calendly.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; frame-src https://calendly.com; connect-src 'self' https://api.web3forms.com https://calendly.com https://res.cloudinary.com;" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Primary Meta Tags -->
+    <title>AURA Diseño Web | Diseño Web Profesional en Córdoba, Argentina</title>
+    <meta name="title" content="AURA Diseño Web | Diseño Web Profesional en Córdoba, Argentina" />
+    <meta name="description" content="Agencia de diseño web en Córdoba, Argentina. Creamos sitios web profesionales que convierten visitas en clientes. Landing pages, e-commerce, webs institucionales. Código limpio y personalizado." />
+    <meta name="keywords" content="diseño web córdoba, desarrollo web argentina, páginas web profesionales, landing page, e-commerce, tienda online, diseño web profesional, agencia web, AURA diseño web, crear sitio web" />
+    <meta name="author" content="AURA Diseño Web" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://disenowebaura.com" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="/attached_assets/og-image.png" />
-    
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@highimpact" />
-    <meta name="twitter:title" content="High Impact Studio" />
-    <meta name="twitter:description" content="Nosotros impulsamos tu negocio profesionalizandolo digitalmente con desarrollo web, desarrollo de software y automatizacion con IA" />
+    <meta property="og:url" content="https://disenowebaura.com/" />
+    <meta property="og:title" content="AURA Diseño Web | Diseño Web Profesional en Córdoba, Argentina" />
+    <meta property="og:description" content="Creamos sitios web profesionales que convierten visitas en clientes. Landing pages desde $400 USD. Código limpio y diseño personalizado." />
+    <meta property="og:image" content="https://disenowebaura.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:site_name" content="AURA Diseño Web" />
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://disenowebaura.com/" />
+    <meta name="twitter:site" content="@disenowebaura" />
+    <meta name="twitter:creator" content="@disenowebaura" />
+    <meta name="twitter:title" content="AURA Diseño Web | Diseño Web Profesional" />
+    <meta name="twitter:description" content="Creamos sitios web profesionales que convierten visitas en clientes. Landing pages desde $400 USD." />
+    <meta name="twitter:image" content="https://disenowebaura.com/og-image.png" />
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="AR-X" />
+    <meta name="geo.placename" content="Córdoba, Argentina" />
+    <meta name="geo.position" content="-31.4201;-64.1888" />
+    <meta name="ICBM" content="-31.4201, -64.1888" />
+
+    <!-- Favicons -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://res.cloudinary.com" />
+    <link rel="preconnect" href="https://calendly.com" />
+    <link rel="dns-prefetch" href="https://api.web3forms.com" />
     
     <!-- Fonts: Space Grotesk (Headings) & Inter (Body) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
 
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AURA Diseño Web",
+      "alternateName": "AURA",
+      "url": "https://disenowebaura.com",
+      "logo": "https://disenowebaura.com/logo.svg",
+      "description": "Agencia de diseño web profesional en Córdoba, Argentina. Creamos sitios web que convierten visitas en clientes.",
+      "foundingDate": "2024",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+54-351-307-9334",
+        "contactType": "sales",
+        "areaServed": ["AR", "LATAM"],
+        "availableLanguage": ["Spanish"]
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Córdoba",
+        "addressRegion": "Córdoba",
+        "addressCountry": "AR"
+      },
+      "sameAs": [
+        "https://instagram.com/aura.disenoweb",
+        "https://tiktok.com/@aura.disenoweb",
+        "https://www.linkedin.com/in/axel-rodriguez-16b7a3261/"
+      ]
+    }
+    </script>
 
+    <!-- Structured Data - LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "AURA Diseño Web",
+      "image": "https://disenowebaura.com/og-image.png",
+      "priceRange": "$$",
+      "@id": "https://disenowebaura.com",
+      "url": "https://disenowebaura.com",
+      "telephone": "+54-351-307-9334",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Córdoba",
+        "addressRegion": "Córdoba",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -31.4201,
+        "longitude": -64.1888
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Diseño y Desarrollo Web",
+      "provider": {
+        "@type": "Organization",
+        "name": "AURA Diseño Web"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Argentina"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Diseño Web",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Landing Page",
+              "description": "Página única diseñada para captar clientes"
+            },
+            "price": "400",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Web Institucional",
+              "description": "Presencia web completa con múltiples secciones"
+            },
+            "price": "800",
+            "priceCurrency": "USD"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "E-Commerce",
+              "description": "Tienda online completa para vender productos 24/7"
+            },
+            "price": "1000",
+            "priceCurrency": "USD"
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body class="bg-black text-white antialiased selection:bg-white selection:text-black">
+    <noscript>
+      <div style="padding: 20px; text-align: center; background: #1a1a1a; color: white;">
+        Para una mejor experiencia, por favor habilita JavaScript en tu navegador.
+      </div>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
   </body>
 </html>

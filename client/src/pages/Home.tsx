@@ -5,6 +5,8 @@ import Hero from '@/sections/Hero';
 import NavigationCards from '@/sections/NavigationCards';
 import VideoPresentation from '@/sections/VideoPresentation';
 import WhyChooseUs from '@/sections/WhyChooseUs';
+import ProjectsTestimonials from '@/sections/ProjectsTestimonials';
+import Contact from '@/sections/Contact';
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
         <VideoPresentation />
         <NavigationCards />
         <WhyChooseUs />
+        <ProjectsTestimonials />
+        <Contact />
       </main>
       <Footer />
     </div>

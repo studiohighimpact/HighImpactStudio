@@ -1,39 +1,52 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
+/* Custom breakpoint for extra small screens */
+@custom-variant xs (@media (min-width: 480px));
+
 @theme inline {
   --color-background: hsl(0 0% 0%);
   --color-foreground: hsl(0 0% 100%);
-  
+
   --color-card: hsl(0 0% 3%);
   --color-card-foreground: hsl(0 0% 100%);
-  
+
   --color-popover: hsl(0 0% 3%);
   --color-popover-foreground: hsl(0 0% 100%);
-  
+
   --color-primary: hsl(0 0% 100%);
   --color-primary-foreground: hsl(0 0% 0%);
-  
+
   --color-secondary: hsl(0 0% 10%);
   --color-secondary-foreground: hsl(0 0% 100%);
-  
+
   --color-muted: hsl(0 0% 10%);
   --color-muted-foreground: hsl(0 0% 60%);
-  
+
   --color-accent: hsl(0 0% 15%);
   --color-accent-foreground: hsl(0 0% 100%);
-  
+
   --color-destructive: hsl(0 62% 30%);
   --color-destructive-foreground: hsl(0 0% 100%);
-  
+
   --color-border: hsl(0 0% 15%);
   --color-input: hsl(0 0% 15%);
   --color-ring: hsl(0 0% 100%);
-  
+
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
-  
-  --radius: 0rem; /* Sharp edges for tech feel */
+
+  --radius: 0rem; /* Sharp edges for tech feel */ --animate-marquee: marquee var(--duration) linear infinite; --color-brand-foreground: var(----brand-foreground); --color-brand: var(----brand);
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
 }
 
 @layer base {
@@ -42,9 +55,23 @@
   }
   body {
     @apply font-sans bg-background text-foreground;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight;
+  }
+  /* Improve tap targets on mobile */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Prevent text selection on buttons for better UX */
+  button {
+    -webkit-user-select: none;
+    user-select: none;
   }
 }
 
@@ -66,4 +93,61 @@
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Shimmer animation for AURA text */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Typewriter cursor blink animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+  color: #c084fc; /* purple-400 */
+  font-weight: normal;
+}
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(240 10% 3.9%);
+  --brand: hsl(266 100% 50%);
+  --brand-foreground: hsl(270 100% 98%);
+  --muted: hsl(240 4.8% 95.9%);
+  --muted-foreground: hsl(240 3.8% 46.1%);
+}
+
+.dark {
+  --background: hsl(240 10% 3.9%);
+  --foreground: hsl(0 0% 98%);
+  --brand: hsl(266 70% 60%);
+  --brand-foreground: hsl(270 100% 98%);
+  --muted: hsl(240 3.7% 15.9%);
+  --muted-foreground: hsl(240 5% 64.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
