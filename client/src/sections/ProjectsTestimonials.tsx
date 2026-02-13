@@ -68,6 +68,12 @@ const projects = [
     description: "Landing page para startup tecnológica",
     image: "https://res.cloudinary.com/dwspyodrs/image/upload/v1765986711/Captura_de_pantalla_2025-12-17_a_la_s_12.51.09_p._m._uiepwq.png",
     link: "#"
+  },
+  {
+    title: "Inmobiliaria de Miami",
+    description: "Landing page para importante inmobiliaria",
+    image: "https://res.cloudinary.com/dzt42drme/image/upload/v1768925473/Captura_de_pantalla_2026-01-20_a_la_s_1.07.14_p._m._pxfrrz.png",
+    link: "https://vertice-propiedades.vercel.app/"
   }
 ];
 

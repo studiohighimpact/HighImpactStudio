@@ -7,6 +7,33 @@ import { ExternalLink } from 'lucide-react';
 
 const projects = [
   {
+    name: "CHECK CAR CÓRDOBA",
+    description: "Landing Page para servicio de peritaje automotor pre-compra en Córdoba. Sistema de reserva por WhatsApp, testimonios de clientes y sección de beneficios. Diseño enfocado en generar confianza y conversión.",
+    tags: ["Landing Page", "Servicios", "WhatsApp", "Córdoba"],
+    category: "LANDING PAGE",
+    image: "https://res.cloudinary.com/dwspyodrs/image/upload/v1739480000/checkcar-preview.png",
+    demoUrl: "https://checkcarcordoba.vercel.app/",
+    projectUrl: "https://checkcarcordoba.vercel.app/"
+  },
+  {
+    name: "SUMICAKE PASTELERÍA",
+    description: "Web completa para pastelería y cursos online en Lima, Perú. Incluye galería de productos, sistema de pedidos por WhatsApp, integración con Skool para cursos, y sección de historia personal. Diseño dulce y atractivo.",
+    tags: ["Web Completa", "E-Learning", "Pastelería", "Perú"],
+    category: "WEB INSTITUCIONAL",
+    image: "https://res.cloudinary.com/dwspyodrs/image/upload/v1739480000/sumicake-preview.png",
+    demoUrl: "https://sumicake.vercel.app/",
+    projectUrl: "https://sumicake.vercel.app/"
+  },
+  {
+    name: "VÉRTICE PROPIEDADES",
+    description: "Sitio web de lujo para inmobiliaria de propiedades premium en Miami. Galería de propiedades exclusivas, testimonios elegantes, animaciones sofisticadas y diseño minimalista de alto impacto. Enfocado en propiedades de $3M+.",
+    tags: ["Web Premium", "Inmobiliaria", "Lujo", "Miami"],
+    category: "WEB INSTITUCIONAL",
+    image: "https://res.cloudinary.com/dwspyodrs/image/upload/v1739480000/vertice-preview.png",
+    demoUrl: "https://vertice-propiedades.vercel.app/",
+    projectUrl: "https://vertice-propiedades.vercel.app/"
+  },
+  {
     name: "FARIAS & FARIAS",
     description: "Landing Page profesional para inmobiliaria. Diseño elegante enfocado en captación de clientes con showcase de propiedades y formulario de contacto optimizado.",
     tags: ["Landing Page", "Inmobiliaria", "Conversión", "WhatsApp"],

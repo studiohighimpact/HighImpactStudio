@@ -166,7 +166,7 @@ const serviciosGenerales = [
     badge: null
   }
 ];
-
+ 
 const planesMantenimiento = [
   {
     name: "PLAN BÁSICO",
