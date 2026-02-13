@@ -11,7 +11,7 @@ const projects = [
     description: "Landing Page para servicio de peritaje automotor pre-compra en Córdoba. Sistema de reserva por WhatsApp, testimonios de clientes y sección de beneficios. Diseño enfocado en generar confianza y conversión.",
     tags: ["Landing Page", "Servicios", "WhatsApp", "Córdoba"],
     category: "LANDING PAGE",
-    image: "https://res.cloudinary.com/dwspyodrs/image/upload/v1739480000/checkcar-preview.png",
+    image: "https://res.cloudinary.com/dzt42drme/image/upload/v1771009596/Captura_de_pantalla_2026-02-13_a_la_s_4.05.03_p._m._pywath.png",
     demoUrl: "https://checkcarcordoba.vercel.app/",
     projectUrl: "https://checkcarcordoba.vercel.app/"
   },
@@ -20,7 +20,7 @@ const projects = [
     description: "Web completa para pastelería y cursos online en Lima, Perú. Incluye galería de productos, sistema de pedidos por WhatsApp, integración con Skool para cursos, y sección de historia personal. Diseño dulce y atractivo.",
     tags: ["Web Completa", "E-Learning", "Pastelería", "Perú"],
     category: "WEB INSTITUCIONAL",
-    image: "https://res.cloudinary.com/dwspyodrs/image/upload/v1739480000/sumicake-preview.png",
+    image: "https://res.cloudinary.com/dzt42drme/image/upload/v1771009596/Captura_de_pantalla_2026-02-13_a_la_s_4.05.24_p._m._ikv4if.png",
     demoUrl: "https://sumicake.vercel.app/",
     projectUrl: "https://sumicake.vercel.app/"
   },
@@ -29,7 +29,7 @@ const projects = [
     description: "Sitio web de lujo para inmobiliaria de propiedades premium en Miami. Galería de propiedades exclusivas, testimonios elegantes, animaciones sofisticadas y diseño minimalista de alto impacto. Enfocado en propiedades de $3M+.",
     tags: ["Web Premium", "Inmobiliaria", "Lujo", "Miami"],
     category: "WEB INSTITUCIONAL",
-    image: "https://res.cloudinary.com/dwspyodrs/image/upload/v1739480000/vertice-preview.png",
+    image: "https://res.cloudinary.com/dzt42drme/image/upload/v1771009596/Captura_de_pantalla_2026-02-13_a_la_s_4.05.46_p._m._ojuhop.png",
     demoUrl: "https://vertice-propiedades.vercel.app/",
     projectUrl: "https://vertice-propiedades.vercel.app/"
   },
