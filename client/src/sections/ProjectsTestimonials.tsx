@@ -52,6 +52,24 @@ function FloatingPaths({ position }: { position: number }) {
 // Projects data
 const projects = [
   {
+    title: "Check Car Córdoba",
+    description: "Servicio de peritaje automotor pre-compra",
+    image: "https://res.cloudinary.com/dzt42drme/image/upload/v1771009596/Captura_de_pantalla_2026-02-13_a_la_s_4.05.03_p._m._pywath.png",
+    link: "https://checkcarcordoba.vercel.app/"
+  },
+  {
+    title: "Sumicake Pastelería",
+    description: "Pastelería y cursos online en Lima, Perú",
+    image: "https://res.cloudinary.com/dzt42drme/image/upload/v1771009596/Captura_de_pantalla_2026-02-13_a_la_s_4.05.24_p._m._ikv4if.png",
+    link: "https://sumicake.vercel.app/"
+  },
+  {
+    title: "Vértice Propiedades",
+    description: "Inmobiliaria de propiedades premium en Miami",
+    image: "https://res.cloudinary.com/dzt42drme/image/upload/v1771009596/Captura_de_pantalla_2026-02-13_a_la_s_4.05.46_p._m._ojuhop.png",
+    link: "https://vertice-propiedades.vercel.app/"
+  },
+  {
     title: "ProFitness",
     description: "Plataforma de fitness y entrenamiento personal",
     image: "https://res.cloudinary.com/dwspyodrs/image/upload/v1765986704/Captura_de_pantalla_2025-12-17_a_la_s_12.50.55_p._m._drgewm.png",
@@ -64,16 +82,10 @@ const projects = [
     link: "https://fariasyfarias.vercel.app/"
   },
   {
-    title: "Proyecto Tech",
-    description: "Landing page para startup tecnológica",
+    title: "Axel Developer",
+    description: "Portfolio personal de desarrollador",
     image: "https://res.cloudinary.com/dwspyodrs/image/upload/v1765986711/Captura_de_pantalla_2025-12-17_a_la_s_12.51.09_p._m._uiepwq.png",
-    link: "#"
-  },
-  {
-    title: "Inmobiliaria de Miami",
-    description: "Landing page para importante inmobiliaria",
-    image: "https://res.cloudinary.com/dzt42drme/image/upload/v1768925473/Captura_de_pantalla_2026-01-20_a_la_s_1.07.14_p._m._pxfrrz.png",
-    link: "https://vertice-propiedades.vercel.app/"
+    link: "https://axel-developer-portfolio.vercel.app/"
   }
 ];
 
